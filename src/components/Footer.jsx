@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-cyan-950 text-blue-100
 ">
-      <div className="footer sm:footer-horizontal  py-10 container mx-auto px-3 md:px-0 gray-text border-b border-gray-600">
+      <div className="footer sm:footer-horizontal  py-10 container mx-auto px-3 md:px-0 gray-text border-b border-gray-600 ">
         <div className=" items-center">
           {/* <img className="h-10" src={logo} alt="logo" /> */}
           <div className="flex items-center">

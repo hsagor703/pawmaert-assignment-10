@@ -15,9 +15,9 @@
   @apply bg-[#045B98] text-white
 
 }
-/* .linear-text{
-  @apply text-transparent bg-clip-text bg-linear-to-r from-[#632EE3] to-[#9F62F2]
-} */
+ /* .linear-text{
+  @apply text-transparent bg-clip-text bg-linear-to-r from-[#085e9c] to-[#83bbe4]
+}  */
 .blue-text {
   @apply text-[#001931];
 }
