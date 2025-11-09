@@ -1,24 +1,30 @@
 import React from "react";
-// import logo from "../assets/pet-care-logo-3.png";
+import logo from "../assets/1762692019828-removebg-preview.png";
+import { FaXTwitter } from "react-icons/fa6";
 // import { Link } from "lucide-react";
-
 const Footer = () => {
   return (
-    <footer className="bg-[#001931] ">
-      <div className="footer sm:footer-horizontal  py-20 container mx-auto px-3 md:px-0 gray-text border-b border-gray-600">
+    <footer className="bg-cyan-950 text-blue-100
+">
+      <div className="footer sm:footer-horizontal  py-10 container mx-auto px-3 md:px-0 gray-text border-b border-gray-600">
         <div className=" items-center">
           {/* <img className="h-10" src={logo} alt="logo" /> */}
-          <h2 className="text-3xl font-bold text-white">
-            Smart<span className="linear-text">Deals</span>
-          </h2>
+          <div className="flex items-center">
+            <img className="h-20 " src={logo} alt="" />
+
+            <a className="text-3xl font-bold text-white">
+              Paw
+              <span className="text-[#126aa8]">Mart</span>
+            </a>
+          </div>
           <p className="md:w-88">
-            Your trusted marketplace for authentic local products. Discover the
-            best deals from across Bangladesh.
+            PawMart connects local pet owners and buyers for adoption and pet
+            care products.
           </p>
         </div>
 
         <div>
-          <h6 className="white-text">Quick Links</h6>
+          <h6 className="white-text">Home</h6>
           <a className="link link-hover">All Products</a>
           <a className="link link-hover">DashBoard</a>
           <a className="link link-hover">Login</a>
@@ -26,11 +32,13 @@ const Footer = () => {
         </div>
 
         <div>
-          <h6 className="white-text">Categories</h6>
-          <a className="link link-hover">Electronics</a>
-          <a className="link link-hover">Fashion</a>
-          <a className="link link-hover">Home & Living</a>
-          <a className="link link-hover">Groceries</a>
+          <h6 className="white-text">PawMart Terms & Conditions</h6>
+          <h1 className="link link-hover md:w-60">
+            By using PawMart, you agree to share accurate info and use our
+            platform responsibly. PawMart isn’t responsible for disputes,
+            product issues, or adoption problems. We respect your privacy and
+            may update these terms anytime.
+          </h1>
         </div>
 
         <div>
@@ -44,17 +52,9 @@ const Footer = () => {
 
         <div>
           <h6 className="white-text">Social</h6>
-          <div className="grid grid-flow-col gap-4">
+          <div className="grid grid-flow-col gap-4 items-center">
             <a>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="fill-current text-[#1DA1F2]"
-              >
-                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-              </svg>
+              <FaXTwitter />
             </a>
             <a>
               <svg
@@ -83,7 +83,7 @@ const Footer = () => {
       </div>
       <div className="">
         <a className=" gray-text flex justify-center py-7">
-          © 2025 SmartDeals. All rights reserved.
+          © 2025 PawMart. All rights reserved..
         </a>
       </div>
     </footer>

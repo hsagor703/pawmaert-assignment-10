@@ -1,15 +1,39 @@
 import React from "react";
 import { Link, NavLink } from "react-router";
-
-
+import logo from "../assets/1762692019828-removebg-preview.png";
+import { FaHome } from "react-icons/fa";
+import { MdFormatListBulletedAdd, MdPets } from "react-icons/md";
+import { PiUserListFill } from "react-icons/pi";
+import { RiListOrdered2 } from "react-icons/ri";
+import { LuLogIn } from "react-icons/lu";
 const Navbar = () => {
   const links = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/">
+          <FaHome className="text-xl" /> Home
+        </NavLink>
       </li>
       <li>
-        <NavLink to="">Pets &amp; Supplies</NavLink>
+        <NavLink to="/pet-supplies">
+          <MdPets className="text-xl" /> Pets &amp; Supplies
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/add-listing">
+          <MdFormatListBulletedAdd className="text-xl" /> Add Listing
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/my-listing">
+          <PiUserListFill className="text-2xl" />
+          My Listing
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/my-orders">
+          <RiListOrdered2 className="text-xl" /> My Orders
+        </NavLink>
       </li>
       {/* {user && (
         <>
@@ -28,7 +52,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="bg-base-100 shadow-sm">
+    <div className="bg-base-300 shadow-sm">
       <div className="navbar  container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -56,29 +80,27 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className="text-3xl font-bold blue-text">
-            Paw
-            <span className="linear-text">
-              Mart
-            </span>
-          </a>
+
+          <div className="flex items-center">
+            <img className="h-20" src={logo} alt="" />
+
+            <a className="text-3xl font-bold">
+              Paw
+              <span className="text-[#045B98]">Mart</span>
+            </a>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-   
-            <button
-              onClick={'handleLogout'}
-              className="btn linear-btn"
-            >
-              Logout
-            </button>
-    
-            <Link to='/login' className="btn linear-btn ">
-              Signin
-            </Link>
-   
+          <Link to="/login" className="btn linear-btn ">
+            <LuLogIn />
+            Login
+          </Link>
+          <button onClick={"handleLogout"} className="btn linear-btn">
+            Register
+          </button>
         </div>
       </div>
     </div>
