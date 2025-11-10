@@ -98,9 +98,9 @@ const Navbar = () => {
             <LuLogIn />
             Login
           </Link>
-          <button onClick={"handleLogout"} className="btn linear-btn">
+          <Link to='/register' onClick={"handleLogout"} className="btn linear-btn">
             Register
-          </button>
+          </Link>
         </div>
       </div>
     </div>
