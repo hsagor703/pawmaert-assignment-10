@@ -1,0 +1,202 @@
+[
+  {
+    "name": "Golden Retriever Puppy",
+    "category": "Pets",
+    "Price": 0,
+    "location": "Dhaka",
+    "description": "Friendly 2-month-old puppy available for adoption.",
+    "image": "https://i.ibb.co.com/tTcsTkTC/dailyhawker-lenses-0-JSDL8-PNh38-unsplash.jpg",
+    "email": "owner@gmail.com",
+    "date": "2025-10-27"
+  },
+  {
+    "name": "Persian Cat",
+    "category": "Pets",
+    "Price": 0,
+    "location": "Chittagong",
+    "description": "Beautiful white Persian cat, calm and affectionate, looking for a new home.",
+    "image": "https://i.ibb.co.com/rK3wBRbs/12photostory-5-Dv4-KBD54-QA-unsplash.jpg",
+    "email": "catlover@gmail.com",
+    "date": "2025-10-25"
+  },
+  {
+    "name": "German Shepherd Puppy",
+    "category": "Pets",
+    "Price": 0,
+    "location": "Sylhet",
+    "description": "Energetic and loyal German Shepherd puppy available for adoption.",
+    "image": "https://i.ibb.co.com/d0R6ktDF/hartono-subagio-t17z-RSjn-V4g-unsplash.jpg",
+    "email": "dogcare@gmail.com",
+    "date": "2025-10-22"
+  },
+  {
+    "name": "Parrot Pair",
+    "category": "Pets",
+    "Price": 0,
+    "location": "Khulna",
+    "description": "Pair of talking parrots available for rehoming to loving bird owners.",
+    "image": "https://i.ibb.co.com/V0W7bqRr/ben-owen-FFw-NGYZK-2o-unsplash.jpg",
+    "email": "birdhouse@gmail.com",
+    "date": "2025-10-28"
+  },
+  {
+    "name": "Labrador Puppy",
+    "category": "Pets",
+    "Price": 0,
+    "location": "Rajshahi",
+    "description": "Playful 3-month-old Labrador puppy looking for a caring family.",
+    "image": "https://i.ibb.co.com/ymm7sjty/jaclou-dl-9-DPMZrp-Oy-SA-unsplash.jpg",
+    "email": "lablover@gmail.com",
+    "date": "2025-10-29"
+  },
+  {
+    "name": "Siamese Cat",
+    "category": "Pets",
+    "Price": 0,
+    "location": "Dhaka",
+    "description": "Smart and social Siamese cat, fully vaccinated and litter trained.",
+    "image": "https://i.ibb.co.com/whYGZXkw/felix-mittermeier-X-r-Jf-No0-Cd-Q-unsplash.jpg",
+    "email": "adoptcats@gmail.com",
+    "date": "2025-10-21"
+  },
+  {
+    "name": "Hamster Duo",
+    "category": "Pets",
+    "Price": 0,
+    "location": "Gazipur",
+    "description": "Two cute and healthy hamsters with cage and accessories included.",
+    "image": "https://i.ibb.co.com/sd8mMp00/arnaud-steckle-TCYp-FCGw-Ppk-unsplash.jpg",
+    "email": "smallpets@gmail.com",
+    "date": "2025-10-26"
+  },
+  {
+    "name": "Rabbit",
+    "category": "Pets",
+    "Price": 0,
+    "location": "Barishal",
+    "description": "Soft white rabbit, gentle and perfect for kids, up for adoption.",
+    "image": "https://i.ibb.co.com/gFwchmcP/pablo-martinez-Adagxt-VKRWE-unsplash.jpg",
+    "email": "bunnycare@gmail.com",
+    "date": "2025-10-30"
+  },
+  {
+    "name": "Cockatiel Bird",
+    "category": "Pets",
+    "Price": 0,
+    "location": "Rangpur",
+    "description": "Young cockatiel, very friendly and sings beautifully in the morning.",
+    "image": "https://i.ibb.co.com/Dfh747cm/hardial-aujla-T-D5-Ry5-Bqu4-unsplash.jpg",
+    "email": "birdadopt@gmail.com",
+    "date": "2025-10-24"
+  },
+  {
+    "name": "Bulldog Puppy",
+    "category": "Pets",
+    "Price": 0,
+    "location": "Comilla",
+    "description": "Strong and calm bulldog puppy ready for adoption. Loves kids.",
+    "image": "https://i.ibb.co.com/v4Mf9cFK/justin-veenema-NLz-Dusv-ZAGs-unsplash.jpg",
+    "email": "dogzone@gmail.com",
+    "date": "2025-10-23"
+  },
+  {
+    "name": "Turtle",
+    "category": "Pets",
+    "Price": 0,
+    "location": "Dhaka",
+    "description": "Healthy pet turtle with tank. Easy to care for, great for beginners.",
+    "image": "https://i.ibb.co.com/xt4k742v/tanguy-sauvin-IBEXUZBml-Xg-unsplash.jpg",
+    "email": "aqua@gmail.com",
+    "date": "2025-10-28"
+  },
+  {
+    "name": "Husky Puppy",
+    "category": "Pets",
+    "Price": 0,
+    "location": "Sylhet",
+    "description": "Adorable Husky puppy with blue eyes, playful and energetic.",
+    "image": "https://i.ibb.co.com/MDDhtg9f/andriyko-podilnyk-M4-NYOs-Sre6g-unsplash.jpg",
+    "email": "dogworld@gmail.com",
+    "date": "2025-10-19"
+  },
+  {
+    "name": "Canary Bird",
+    "category": "Pets",
+    "Price": 0,
+    "location": "Khulna",
+    "description": "Yellow canary bird, sings sweetly and enjoys human interaction.",
+    "image": "https://i.ibb.co.com/Jwywg0kZ/cesar-ardila-6-Y0bhx8v-PKU-unsplash.jpg",
+    "email": "birdsing@gmail.com",
+    "date": "2025-10-31"
+  },
+  {
+    "name": "Maine Coon Cat",
+    "category": "Pets",
+    "Price": 0,
+    "location": "Dhaka",
+    "description": "Large and fluffy Maine Coon cat, very gentle and family-friendly.",
+    "image": "https://i.ibb.co.com/934qFLB1/bin-white-1-PDE6-Yrrsck-unsplash.jpg",
+    "email": "meow@gmail.com",
+    "date": "2025-10-20"
+  },
+  {
+    "name": "Pomeranian Puppy",
+    "category": "Pets",
+    "Price": 0,
+    "location": "Chittagong",
+    "description": "Tiny fluffy Pomeranian puppy with vaccinations completed.",
+    "image": "https://i.ibb.co.com/ZR0hVd12/stefanus-fandhy-1-Ai-ACL58-a-Q-unsplash.jpg",
+    "email": "fluffypaws@gmail.com",
+    "date": "2025-10-27"
+  },
+  {
+    "name": "Lovebirds",
+    "category": "Pets",
+    "Price": 0,
+    "location": "Gazipur",
+    "description": "Colorful lovebird pair, well-fed and healthy, cage included.",
+    "image": "https://i.ibb.co.com/PGMSXt9R/isaac-benhesed-V-zc-DORGb3s-unsplash.jpg",
+    "email": "birdlover@gmail.com",
+    "date": "2025-10-26"
+  },
+  {
+    "name": "Guinea Pig",
+    "category": "Pets",
+    "Price": 0,
+    "location": "Rajshahi",
+    "description": "Cute brown guinea pig, friendly and perfect small pet for kids.",
+    "image": "https://i.ibb.co.com/4nQrBY0M/katherine-mcadoo-v-SS2-Kfzb-LY-unsplash.jpg",
+    "email": "smallpet@gmail.com",
+    "date": "2025-10-18"
+  },
+  {
+    "name": "Dalmatian Puppy",
+    "category": "Pets",
+    "Price": 0,
+    "location": "Dhaka",
+    "description": "Spotty Dalmatian puppy full of energy, great for families with kids.",
+    "image": "https://i.ibb.co.com/vCZ9LgVM/cody-f-4-W6bx-B8-ONg-unsplash.jpg",
+    "email": "spotdog@gmail.com",
+    "date": "2025-10-29"
+  },
+  {
+    "name": "Exotic Fish Set",
+    "category": "Pets",
+    "Price": 0,
+    "location": "Khulna",
+    "description": "Set of 5 colorful aquarium fish with full tank setup.",
+    "image": "https://i.ibb.co.com/9908wLBh/pierre-goiffon-rhlo5fj-Jd-Mg-unsplash.jpg",
+    "email": "aquapet@gmail.com",
+    "date": "2025-10-30"
+  },
+  {
+    "name": "Beagle Puppy",
+    "category": "Pets",
+    "Price": 0,
+    "location": "Dhaka",
+    "description": "Friendly Beagle puppy that loves outdoor play and cuddles.",
+    "image": "https://i.ibb.co.com/SwPxVwzC/ben-michel-Uyn3k-XAa-ZX8-unsplash.jpg",
+    "email": "pethub@gmail.com",
+    "date": "2025-10-27"
+  }
+]

@@ -28,7 +28,7 @@ const CategorySection = () => {
     <section className="py-12 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold mb-8 text-gray-800">
-          Explore Our Categories
+          Explore Our <span className="text-[#045B98]">Categories</span>
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">

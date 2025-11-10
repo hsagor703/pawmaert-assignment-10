@@ -1,7 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 @import "tailwindcss";
 @plugin "daisyui";
 @plugin "daisyui" {
   themes: light --default, dark --prefersdark;
+}
+
+*{
+  font-family: "Inter", sans-serif;
 }
 
 /* <!-- From Uiverse.io by catraco -->  */
@@ -10,12 +16,14 @@
   @apply text-sky-400 border border-sky-400 hover:bg-sky-400;
 }
 
-
- .linear-btn{
-  @apply bg-[#045B98] text-white
-
+.linear-btn {
+  @apply bg-[#045B98] text-white;
 }
- /* .linear-text{
+
+.linear-text{
+  @apply text-[#045B98]
+}
+/* .linear-text{
   @apply text-transparent bg-clip-text bg-linear-to-r from-[#085e9c] to-[#83bbe4]
 }  */
 .blue-text {
@@ -33,6 +41,5 @@
 }
 
 a.active {
-  @apply text-[#045B98] font-semibold border-2 
-;
+  @apply text-[#045B98] font-semibold border-2;
 }

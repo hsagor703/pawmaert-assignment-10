@@ -14,8 +14,8 @@ const Slider = () => {
             src="https://i.postimg.cc/4y52ZzbX/360-F-390123053-d-Ldh2Ygg-DNr-XYl-GP9Og-BGf-Td-Iw-UKU2Hx.jpg"
             className="w-full rounded-xl relative"
           />
-          <h1 className="absolute md:left-50 top-20 md:top-28 text-6xl text-[#045B98] w-80 md:w-100 font-bold">
-            “Find Your Furry Friend Today!”
+          <h1 className="absolute md:left-50 top-20 md:top-28 text-6xl w-80 md:w-100 font-bold">
+            “Find Your <span className="text-[#045B98]">Furry Friend</span> Today!”
           </h1>
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
             <a href="#slide4" className="btn btn-circle">
@@ -46,8 +46,8 @@ const Slider = () => {
             src="https://i.postimg.cc/kGz9N3zv/istockphoto-1131381748-612x612.jpg"
             className="w-full rounded-xl"
           />
-          <h1 className="absolute left-10 md:left-70 top-68 text-2xl md:text-4xl text-[#045B98]  font-bold">
-            “Adopt, Don’t Shop — Give a Pet a Home.”
+          <h1 className="absolute left-10 md:left-70 top-68 text-2xl md:text-4xl font-bold">
+            <span className="text-[#045B98]">“Adopt </span>, Don’t Shop — Give <span className="text-[#045B98]">a Pet </span> a Home.”
           </h1>
 
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
@@ -64,8 +64,8 @@ const Slider = () => {
             src="https://i.ibb.co.com/YFqkZW2X/happy-hipster-guy-glasses-pet-dog-smiling-cute-black-pug-enjoy-spending-time-with-owner-looki.jpg"
             className="w-full rounded-xl"
           />
-          <h1 className="absolute left-15 md:left-30 top-40 text-2xl md:text-5xl w-60 md:w-190 text-[#045B98]  font-bold">
-            “Because Every Pet Deserves Love and Care.”
+          <h1 className="absolute left-15 md:left-30 top-40 text-2xl md:text-5xl w-60 md:w-190  font-bold">
+            “Because Every <span className="text-[#045B98]">Pet</span> Deserves <span className="text-[#045B98]">Love and Care.” </span> 
           </h1>
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
             <a href="#slide3" className="btn btn-circle">
