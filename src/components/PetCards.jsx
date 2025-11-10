@@ -25,8 +25,9 @@ const PetCards = ({ data }) => {
             Price: <span className="linear-text">{price}</span>
           </h2>
           <div className="card-actions ">
+            {/* /productDetails/${_id} */}
             <Link
-              to={`/productDetails/${_id}`}
+              to={``}
               className="btn w-full linear-btn font-semibold"
             >
               View Details
