@@ -17,7 +17,7 @@
 }
 
 .linear-btn {
-  @apply bg-[#045B98] text-white;
+  @apply bg-[#045B98] hover:bg-[#1b8cdd] text-white;
 }
 
 .linear-text{
