@@ -1,10 +1,60 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { use } from "react";
+import { Link } from "react-router";
+import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
-    return (
-        <div>
-           <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 py-10">
+  const { createUser,signinWithGoogle } = use(AuthContext);
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log("register", email, password);
+    createUser(email, password)
+      .then((user) => {
+        console.log(user.user);
+        e.target.reset()
+        Swal.fire({
+          title: "register successfully",
+          icon: "success",
+          draggable: true,
+        });
+
+      })
+      .catch((err) => {
+        console.log(err.code);
+        Swal.fire({
+          title: err.code,
+          icon: "error",
+          draggable: true,
+        });
+      });
+  };
+
+   // signin with google
+    const handleLoginWithGoogle = () => {
+      signinWithGoogle()
+        .then((user) => {
+          console.log(user.user);
+          Swal.fire({
+            title: "login successfully",
+            icon: "success",
+            draggable: true,
+          });
+        })
+        .catch((err) => {
+          console.log(err.code);
+          Swal.fire({
+            title: err.code,
+            icon: "error",
+            draggable: true,
+          });
+        });
+    };
+
+  return (
+    <div>
+      <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 py-10">
         <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
           {/* Title */}
           <h1 className="text-3xl font-bold text-center linear-text mb-6">
@@ -12,7 +62,7 @@ const Register = () => {
           </h1>
 
           {/* Signup Form */}
-          <form onSubmit={''} className="space-y-4">
+          <form onSubmit={handleRegister} className="space-y-4">
             {/* Name */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -22,6 +72,7 @@ const Register = () => {
                 type="text"
                 name="name"
                 placeholder="Enter your full name"
+                required
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
             </div>
@@ -34,6 +85,7 @@ const Register = () => {
               <input
                 type="email"
                 name="email"
+                required
                 placeholder="Enter your email"
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
@@ -47,6 +99,7 @@ const Register = () => {
               <input
                 type="text"
                 name="photoURL"
+                required
                 placeholder="Enter your photo URL"
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
@@ -59,8 +112,9 @@ const Register = () => {
               </label>
               <input
                 // type={show ? "password" : "text" }
-                type='password'
+                type="password"
                 name="password"
+                required
                 placeholder="Enter your password"
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
@@ -80,41 +134,41 @@ const Register = () => {
               Register
             </button>
 
-             {/* Google */}
-              <button
-                type="button"
-                // onClick={() => handleGoogle()}
-                className="btn bg-white text-black border-[#e5e5e5] w-full mb-5"
+            {/* Google */}
+            <button
+              type="button"
+              onClick={() => handleLoginWithGoogle()}
+              className="btn bg-white text-black border-[#e5e5e5] w-full mb-5"
+            >
+              <svg
+                aria-label="Google logo"
+                width="16"
+                height="16"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
               >
-                <svg
-                  aria-label="Google logo"
-                  width="16"
-                  height="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                >
-                  <g>
-                    <path d="m0 0H512V512H0" fill="#fff"></path>
-                    <path
-                      fill="#34a853"
-                      d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"
-                    ></path>
-                    <path
-                      fill="#4285f4"
-                      d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"
-                    ></path>
-                    <path
-                      fill="#fbbc02"
-                      d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"
-                    ></path>
-                    <path
-                      fill="#ea4335"
-                      d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"
-                    ></path>
-                  </g>
-                </svg>
-                Login with Google
-              </button>
+                <g>
+                  <path d="m0 0H512V512H0" fill="#fff"></path>
+                  <path
+                    fill="#34a853"
+                    d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"
+                  ></path>
+                  <path
+                    fill="#4285f4"
+                    d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"
+                  ></path>
+                  <path
+                    fill="#fbbc02"
+                    d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"
+                  ></path>
+                  <path
+                    fill="#ea4335"
+                    d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"
+                  ></path>
+                </g>
+              </svg>
+              Login with Google
+            </button>
 
             {/* Already have account */}
             <p className="text-center text-sm text-gray-600 mt-3">
@@ -128,9 +182,9 @@ const Register = () => {
             </p>
           </form>
         </div>
-      </div> 
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Register;

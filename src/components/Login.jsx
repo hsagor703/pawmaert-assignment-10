@@ -1,10 +1,57 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { use } from "react";
+import { Link } from "react-router";
+import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
-    return (
-        <div>
-             <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+  const { loginWithEmailPassword, signinWithGoogle } = use(AuthContext);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email, password);
+    loginWithEmailPassword(email, password)
+      .then((user) => {
+        console.log(user.user);
+        Swal.fire({
+          title: "login successfully",
+          icon: "success",
+          draggable: true,
+        });
+      })
+      .catch((err) => {
+        Swal.fire({
+          title: err.code,
+          icon: "error",
+          draggable: true,
+        });
+      });
+  };
+
+  // signin with google
+  const handleLoginWithGoogle = () => {
+    signinWithGoogle()
+      .then((user) => {
+        console.log(user.user);
+        Swal.fire({
+          title: "login successfully",
+          icon: "success",
+          draggable: true,
+        });
+      })
+      .catch((err) => {
+        console.log(err.code);
+        Swal.fire({
+          title: err.code,
+          icon: "error",
+          draggable: true,
+        });
+      });
+  };
+  return (
+    <div>
+      <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
         <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
           {/* Title */}
           <h1 className="text-3xl font-bold text-center linear-text mb-6">
@@ -12,7 +59,7 @@ const Login = () => {
           </h1>
 
           {/* Form */}
-          <form onSubmit={''} className="space-y-4">
+          <form onSubmit={handleLogin} className="space-y-4">
             {/* Email */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -37,7 +84,7 @@ const Login = () => {
               </label>
               <input
                 // type={show? "password" : "text" }
-                type='password'
+                type="password"
                 name="password"
                 placeholder="Enter your password"
                 required
@@ -58,7 +105,7 @@ const Login = () => {
             {/* Forgot Password */}
             <div className="">
               <a
-                onClick={''}
+                onClick={""}
                 type="button"
                 className="text-sm hover:underline linear-text font-medium"
               >
@@ -81,7 +128,7 @@ const Login = () => {
               {/* Google */}
               <button
                 type="button"
-                onClick={''}
+                onClick={handleLoginWithGoogle}
                 className="btn bg-white text-black border-[#e5e5e5] w-full mb-5"
               >
                 <svg
@@ -126,8 +173,8 @@ const Login = () => {
           </form>
         </div>
       </div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Login;

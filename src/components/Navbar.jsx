@@ -1,4 +1,4 @@
-import React from "react";
+import React, { use, useState } from "react";
 import { Link, NavLink } from "react-router";
 import logo from "../assets/1762692019828-removebg-preview.png";
 import { FaHome } from "react-icons/fa";
@@ -6,7 +6,31 @@ import { MdFormatListBulletedAdd, MdPets } from "react-icons/md";
 import { PiUserListFill } from "react-icons/pi";
 import { RiListOrdered2 } from "react-icons/ri";
 import { LuLogIn } from "react-icons/lu";
+import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
+import avatar from "../assets/avatar.png";
+
 const Navbar = () => {
+  const { logOut, user } = use(AuthContext);
+  const [hover, setHover] = useState(false);
+
+  const handleLogout = () => {
+    logOut()
+      .then(() => {
+        Swal.fire({
+          title: "login successfully",
+          icon: "success",
+          draggable: true,
+        });
+      })
+      .catch((err) => {
+        Swal.fire({
+          title: err.code,
+          icon: "error",
+          draggable: true,
+        });
+      });
+  };
   const links = (
     <>
       <li>
@@ -19,35 +43,27 @@ const Navbar = () => {
           <MdPets className="text-xl" /> Pets &amp; Supplies
         </NavLink>
       </li>
-      <li>
-        <NavLink to="/add-listing">
-          <MdFormatListBulletedAdd className="text-xl" /> Add Listing
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to="/my-listing">
-          <PiUserListFill className="text-2xl" />
-          My Listing
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to="/my-orders">
-          <RiListOrdered2 className="text-xl" /> My Orders
-        </NavLink>
-      </li>
-      {/* {user && (
+
+      {user && (
         <>
           <li>
-            <NavLink to="/myProducts">My Products</NavLink>
+            <NavLink to="/add-listing">
+              <MdFormatListBulletedAdd className="text-xl" /> Add Listing
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/myBid">My Bid</NavLink>
+            <NavLink to="/my-listing">
+              <PiUserListFill className="text-2xl" />
+              My Listing
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/create-product">Create Product</NavLink>
+            <NavLink to="/my-orders">
+              <RiListOrdered2 className="text-xl" /> My Orders
+            </NavLink>
           </li>
         </>
-      )} */}
+      )}
     </>
   );
 
@@ -94,13 +110,30 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <Link to="/login" className="btn linear-btn ">
-            <LuLogIn />
-            Login
-          </Link>
-          <Link to='/register' onClick={"handleLogout"} className="btn linear-btn">
-            Register
-          </Link>
+          <div
+            className="relative"
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+          >
+            <img
+              className="w-13 rounded-full mr-2"
+              src={user ? avatar : avatar}
+              alt=""
+            />
+
+            {hover && <p className="absolute top-14 left-5 -translate-x-1/2 bg-black text-white text-sm px-3 py-1 rounded-md shadow-md whitespace-nowrap">{user.displayName}</p>}
+          </div>
+
+          {user ? (
+            <button onClick={handleLogout} className="btn linear-btn">
+              Logout
+            </button>
+          ) : (
+            <Link to="/login" className="btn linear-btn ">
+              <LuLogIn />
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>
