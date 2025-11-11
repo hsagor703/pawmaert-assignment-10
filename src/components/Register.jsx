@@ -9,7 +9,15 @@ const Register = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log("register", email, password);
+    const strongPasswordPattern =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{6,}$/;
+    if (!strongPasswordPattern.test(password)) {
+       return Swal.fire({
+          title: "❌ Password must contain uppercase, lowercase, number, special character, and be at least 6 characters long.",
+          icon: "error",
+          draggable: true,
+        });
+    }
     createUser(email, password)
       .then((user) => {
         console.log(user.user);

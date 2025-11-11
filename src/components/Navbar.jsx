@@ -117,11 +117,11 @@ const Navbar = () => {
           >
             <img
               className="w-13 rounded-full mr-2"
-              src={user ? avatar : avatar}
-              alt=""
+              src={user ? user?.photoURL : avatar}
+              alt={user ? user.displayName : "guest"}
             />
 
-            {hover && <p className="absolute top-14 left-5 -translate-x-1/2 bg-black text-white text-sm px-3 py-1 rounded-md shadow-md whitespace-nowrap">{user.displayName}</p>}
+            {hover && <p className="absolute top-14 left-6 -translate-x-1/2 bg-black text-white text-sm px-3 py-1 rounded-md shadow-md whitespace-nowrap">{user?.displayName}</p>}
           </div>
 
           {user ? (
