@@ -1,10 +1,12 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const { loginWithEmailPassword, signinWithGoogle } = use(AuthContext);
+  const [show, setShow] = useState(true)
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -83,8 +85,8 @@ const Login = () => {
                 Password
               </label>
               <input
-                // type={show? "password" : "text" }
-                type="password"
+                type={show? "password" : "text" }
+                // type="password"
                 name="password"
                 placeholder="Enter your password"
                 required
@@ -93,13 +95,13 @@ const Login = () => {
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
 
-              {/* <button
+              <button
                 type="button"
                 onClick={() => setShow(!show)}
                 className="absolute top-9 right-3"
               >
                 {show ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
-              </button> */}
+              </button>
             </div>
 
             {/* Forgot Password */}

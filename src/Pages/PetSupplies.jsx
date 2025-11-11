@@ -9,7 +9,7 @@ const PetSupplies = () => {
   return (
     <div className="container mx-auto">
       <h1 className="text-5xl font-bold my-10 text-center blue-text ">
-        Latest <span className="linear-text">Products</span> (
+        All <span className="linear-text">Products</span> (
         {allListing.length})
       </h1>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 ">
@@ -17,7 +17,6 @@ const PetSupplies = () => {
           <PetCards key={data._id} data={data}></PetCards>
         ))}
       </div>
-      
     </div>
   );
 };

@@ -198,5 +198,184 @@
     "image": "https://i.ibb.co.com/SwPxVwzC/ben-michel-Uyn3k-XAa-ZX8-unsplash.jpg",
     "email": "pethub@gmail.com",
     "date": "2025-10-27"
+  }, {
+    "name": "Premium Dog Food - Chicken & Rice",
+    "category": "Pet Food",
+    "Price": "1200 BDT",
+    "location": "Dhaka",
+    "description": "High-quality dry dog food with real chicken and rice for balanced nutrition. Suitable for all breeds and promotes healthy skin and coat.",
+    "image": "https://i.ibb.co.com/fzrYM6pv/r-eris-E4-ANP7-JZEZ4-unsplash.jpg",
+    "email": "petmart@gmail.com",
+    "date": "2025-10-27"
+  },
+  {
+    "name": "Whiskas Cat Food - Ocean Fish Flavor",
+    "category": "Pet Food",
+    "Price": "850 BDT",
+    "location": "Dhaka",
+    "description": "Delicious and nutritious cat food made with real ocean fish. Keeps your cat healthy, active, and happy.",
+    "image": "https://i.ibb.co.com/nMmdW1Wy/photographycourse-ffezs4t-N-74-unsplash.jpg",
+    "email": "catcare@gmail.com",
+    "date": "2025-10-27"
+  },
+  {
+    "name": "Pedigree Puppy Starter Food",
+    "category": "Pet Food",
+    "Price": "1100 BDT",
+    "location": "Dhaka",
+    "description": "Special formula designed for puppies under 1 year. Supports growth, bone strength, and immunity.",
+    "image": "https://i.ibb.co.com/HLrVpZ7f/mathew-coulton-zxqa-Akkay-P8-unsplash.jpg",
+    "email": "petshopbd@gmail.com",
+    "date": "2025-10-27"
+  },
+  {
+    "name": "Cat Litter Box with Shovel",
+    "category": "Accessories",
+    "Price": "950 BDT",
+    "location": "Dhaka",
+    "description": "Durable and easy-to-clean cat litter box made from high-quality plastic. Includes free cleaning shovel.",
+    "image": "https://i.ibb.co.com/fGzM46Wk/angelo-cabaluna-Evid1-Fe-HCd-A-unsplash.jpg",
+    "email": "accessoryhub@gmail.com",
+    "date": "2025-10-27"
+  },
+  {
+    "name": "Adjustable Dog Collar - Red Nylon",
+    "category": "Accessories",
+    "Price": "300 BDT",
+    "location": "Dhaka",
+    "description": "Comfortable nylon collar with adjustable buckle. Perfect for small and medium-sized dogs.",
+    "image": "https://i.ibb.co.com/B2zWx5Xj/ivan-louis-qt-ELtj3r-CIg-unsplash.jpg",
+    "email": "petgear@gmail.com",
+    "date": "2025-10-27"
+  },
+  {
+    "name": "Pet Feeding Bowl - Stainless Steel",
+    "category": "Accessories",
+    "Price": "450 BDT",
+    "location": "Dhaka",
+    "description": "Non-slip stainless steel food bowl ideal for dogs and cats. Easy to clean and long-lasting.",
+    "image": "https://i.ibb.co.com/QvxcQBr6/erfan-khoshbin-7hm-Tpi-Sl-F-8-unsplash.jpg",
+    "email": "carecenter@gmail.com",
+    "date": "2025-10-27"
+  },
+  {
+    "name": "Dog Leash - 1.5m Rope",
+    "category": "Accessories",
+    "Price": "400 BDT",
+    "location": "Dhaka",
+    "description": "Strong and flexible rope leash suitable for all dog sizes. Comfortable grip and stylish look.",
+    "image": "https://i.ibb.co.com/hJg9Rz7X/olga-kutseva-ok-YDc-Pd14h-A-unsplash.jpg",
+    "email": "petsupply@gmail.com",
+    "date": "2025-10-27"
+  },
+  {
+    "name": "Pet Grooming Brush",
+    "category": "Pet Care Products",
+    "Price": "350 BDT",
+    "location": "Dhaka",
+    "description": "Soft bristle brush removes loose fur and keeps your pet’s coat smooth and shiny. Gentle on skin.",
+    "image": "https://i.ibb.co.com/8LYRbv6N/reba-spike-4y7030-O1-XPQ-unsplash.jpg",
+    "email": "petbeauty@gmail.com",
+    "date": "2025-10-27"
+  },
+  {
+    "name": "Tick & Flea Shampoo for Dogs",
+    "category": "Pet Care Products",
+    "Price": "550 BDT",
+    "location": "Dhaka",
+    "description": "Herbal shampoo that effectively removes ticks and fleas. Keeps your dog clean and fresh.",
+    "image": "https://i.ibb.co.com/PG9vG8NW/ayla-verschueren-y-E5hlz-Dap-Eo-unsplash.jpg",
+    "email": "petclinic@gmail.com",
+    "date": "2025-10-27"
+  },
+  {
+    "name": "Pet Ear Cleaning Solution",
+    "category": "Pet Care Products",
+    "Price": "600 BDT",
+    "location": "Dhaka",
+    "description": "Gentle ear cleaning liquid that removes dirt and wax buildup to prevent infection.",
+    "image": "https://i.ibb.co.com/GQBCYrqg/hayffield-l-ZVd-Zw2p08y4-unsplash-1.jpg",
+    "email": "healthypet@gmail.com",
+    "date": "2025-10-27"
+  },
+  {
+    "name": "Dog Chew Toy - Rubber Bone",
+    "category": "Accessories",
+    "Price": "280 BDT",
+    "location": "Dhaka",
+    "description": "Durable chew toy made from non-toxic rubber. Keeps your dog entertained and helps clean teeth.",
+    "image": "https://i.ibb.co.com/CNM3H1v/juan-pablo-mascanfroni-R9-Cx8-RN2pp-Y-unsplash.jpg",
+    "email": "funpets@gmail.com",
+    "date": "2025-10-27"
+  },
+  {
+    "name": "Premium Cat Treats - Tuna Flavor",
+    "category": "Pet Food",
+    "Price": "650 BDT",
+    "location": "Dhaka",
+    "description": "Crunchy and delicious tuna-flavored treats for cats. Rich in protein and vitamins.",
+    "image": "https://i.ibb.co.com/k2SgStVW/frederick-shaw-aze9-X7-Kv48w-unsplash.jpg",
+    "email": "treatshop@gmail.com",
+    "date": "2025-10-27"
+  },
+  {
+    "name": "Pet Nail Clipper",
+    "category": "Pet Care Products",
+    "Price": "300 BDT",
+    "location": "Dhaka",
+    "description": "Easy-to-use stainless steel nail clipper for pets. Ensures safe and precise trimming.",
+    "image": "https://i.ibb.co.com/Y4ycrMtW/brett-jordan-a2-Tt-Tsfsr-Lg-unsplash.jpg",
+    "email": "caretools@gmail.com",
+    "date": "2025-10-27"
+  },
+  {
+    "name": "Pet Cooling Mat",
+    "category": "Accessories",
+    "Price": "950 BDT",
+    "location": "Dhaka",
+    "description": "Cooling mat helps your pet stay comfortable during hot days. Easy to clean and portable.",
+    "image": "https://i.ibb.co.com/sZ4GmJb/steven-van-elk-ya9o-MJgrk-EU-unsplash.jpg",
+    "email": "coolpets@gmail.com",
+    "date": "2025-10-27"
+  },
+  {
+    "name": "Healthy Puppy Biscuits",
+    "category": "Pet Food",
+    "Price": "500 BDT",
+    "location": "Dhaka",
+    "description": "Tasty and crunchy biscuits made with natural ingredients for young dogs. Supports digestion and bone health.",
+    "image": "https://i.ibb.co.com/93cYv7k3/abhijit-bhole-hizy-UGxx-B8-unsplash.jpg",
+    "email": "dogtreats@gmail.com",
+    "date": "2025-10-27"
+  },
+  {
+    "name": "Pet Deodorizing Spray",
+    "category": "Pet Care Products",
+    "Price": "480 BDT",
+    "location": "Dhaka",
+    "description": "Long-lasting deodorizing spray that keeps your pet smelling fresh all day.",
+    "image": "https://i.ibb.co.com/XxqgFFbK/lora-seis-k1t-Sn-HMHHWk-unsplash.jpg",
+    "email": "freshpets@gmail.com",
+    "date": "2025-10-27"
+  },
+  {
+    "name": "Pet Toothbrush Set",
+    "category": "Pet Care Products",
+    "Price": "400 BDT",
+    "location": "Dhaka",
+    "description": "Includes toothbrush and pet-safe toothpaste to maintain oral hygiene and prevent bad breath.",
+    "image": "https://i.ibb.co.com/F4Swqs8x/nik-m049k14e-AV4-unsplash.jpg",
+    "email": "smileypets@gmail.com",
+    "date": "2025-10-27"
+  },
+  {
+    "name": "Automatic Pet Water Dispenser",
+    "category": "Accessories",
+    "Price": "1100 BDT",
+    "location": "Dhaka",
+    "description": "Automatic water dispenser ensures your pet stays hydrated all day. Large capacity and easy refill design.",
+    "image": "https://i.ibb.co.com/nsYG3nnP/gytis-slaustas-Oniwoe7-V1x8-unsplash.jpg",
+    "email": "petzone@gmail.com",
+    "date": "2025-10-27"
   }
 ]

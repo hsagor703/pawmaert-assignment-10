@@ -7,42 +7,51 @@ import MyListing from "../Pages/MyListing";
 import MyOrders from "../Pages/MyOrders";
 import Login from "../components/Login";
 import Register from "../components/Register";
+import PrivateRouter from "../Provider/PrivateRouter";
 
- const router = createBrowserRouter([
-{
-    path:'/',
+const router = createBrowserRouter([
+  {
+    path: "/",
     Component: Root,
-    children:[
-        {
-            index: true,
-            Component:Home
-        },
-        {
-            path:'pet-supplies',
-            Component: PetSupplies
-        },
-        {
-            path:'add-listing',
-            Component: AddListing
-        },
-        {
-            path:'my-listing',
-            Component: MyListing
-        },
-        {
-            path:'my-orders',
-            Component: MyOrders
-        },
-        {
-            path:'login',
-            Component: Login
-        },
-        {
-            path:'register',
-            Component: Register
-        },
-    ]
-}
-])
+    children: [
+      {
+        index: true,
+        Component: Home,
+      },
+      {
+        path: "pet-supplies",
+        Component: PetSupplies,
+      },
+      {
+        path: "add-listing",
+        element: (
+          <PrivateRouter>
+            <AddListing />
+          </PrivateRouter>
+        ),
+      },
+      {
+        path: "my-listing",
+        element:<PrivateRouter>
+            <MyListing/>
+        </PrivateRouter>
+      },
+      {
+        path: "my-orders",
+        element:<PrivateRouter>
+            <MyOrders/>
+        </PrivateRouter>
+      },
+      {
+        path: "login",
+        Component: Login,
+      },
+      {
+        path: "register",
+        Component: Register,
+      },
+    ],
+  },
+]);
 
-export default router
+export default router;

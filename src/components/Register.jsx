@@ -1,10 +1,13 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
-  const { createUser,signinWithGoogle } = use(AuthContext);
+  const { createUser, signinWithGoogle } = use(AuthContext);
+  const [show, setShow] = useState(true);
+
   const handleRegister = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -12,22 +15,22 @@ const Register = () => {
     const strongPasswordPattern =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{6,}$/;
     if (!strongPasswordPattern.test(password)) {
-       return Swal.fire({
-          title: "❌ Password must contain uppercase, lowercase, number, special character, and be at least 6 characters long.",
-          icon: "error",
-          draggable: true,
-        });
+      return Swal.fire({
+        title:
+          "❌ Password must contain uppercase, lowercase, number, special character, and be at least 6 characters long.",
+        icon: "error",
+        draggable: true,
+      });
     }
     createUser(email, password)
       .then((user) => {
         console.log(user.user);
-        e.target.reset()
+        e.target.reset();
         Swal.fire({
           title: "register successfully",
           icon: "success",
           draggable: true,
         });
-
       })
       .catch((err) => {
         console.log(err.code);
@@ -39,26 +42,26 @@ const Register = () => {
       });
   };
 
-   // signin with google
-    const handleLoginWithGoogle = () => {
-      signinWithGoogle()
-        .then((user) => {
-          console.log(user.user);
-          Swal.fire({
-            title: "login successfully",
-            icon: "success",
-            draggable: true,
-          });
-        })
-        .catch((err) => {
-          console.log(err.code);
-          Swal.fire({
-            title: err.code,
-            icon: "error",
-            draggable: true,
-          });
+  // signin with google
+  const handleLoginWithGoogle = () => {
+    signinWithGoogle()
+      .then((user) => {
+        console.log(user.user);
+        Swal.fire({
+          title: "login successfully",
+          icon: "success",
+          draggable: true,
         });
-    };
+      })
+      .catch((err) => {
+        console.log(err.code);
+        Swal.fire({
+          title: err.code,
+          icon: "error",
+          draggable: true,
+        });
+      });
+  };
 
   return (
     <div>
@@ -119,19 +122,19 @@ const Register = () => {
                 Password
               </label>
               <input
-                // type={show ? "password" : "text" }
-                type="password"
+                type={show ? "password" : "text"}
                 name="password"
                 required
                 placeholder="Enter your password"
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
-              {/* <button type="button" onClick={() => setShow(!show)} className="absolute top-9 right-3">
-                {
-                  show ? <FaEyeSlash></FaEyeSlash> :<FaEye ></FaEye>
-                }
-                
-              </button> */}
+              <button
+                type="button"
+                onClick={() => setShow(!show)}
+                className="absolute top-9 right-3"
+              >
+                {show ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+              </button>
             </div>
 
             {/* Register Button */}

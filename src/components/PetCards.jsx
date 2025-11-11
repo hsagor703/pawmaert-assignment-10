@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router";
 
 const PetCards = ({ data }) => {
-  const { name, price, category, location, image, _id } = data;
+  const { name, Price, category, location, image, _id } = data;
   return (
     <div>
       <div className="card bg-base-100  shadow-sm">
@@ -22,7 +22,7 @@ const PetCards = ({ data }) => {
             Location: <span className="linear-text">{location}</span>
           </h2>
           <h2 className="card-title">
-            Price: <span className="linear-text">{price}</span>
+            Price: <span className="linear-text">{Price}</span>
           </h2>
           <div className="card-actions ">
             {/* /productDetails/${_id} */}

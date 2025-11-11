@@ -11,7 +11,7 @@ const LatestListing = () => {
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 ">
         {latestAllData.map((data) => <PetCards key={data._id} data={data}></PetCards>)}
       </div>
-      <Link to='/allProducts' className="btn linear-btn my-10  mx-auto grid w-25">Show All</Link>
+      <Link to='/pet-supplies' className="btn linear-btn my-10  mx-auto grid w-25">Show All</Link>
     </div>
   );
 };
