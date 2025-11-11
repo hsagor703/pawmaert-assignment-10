@@ -7,7 +7,7 @@ const LatestListing = () => {
     const latestAllData = use(fetchPromise) 
   return (
     <div className="container mx-auto">
-      <h1 className="text-5xl font-bold mb-10 text-center blue-text ">Latest <span className="linear-text">Products</span> ({latestAllData.length})</h1>
+      <h1 className="text-5xl font-bold mb-15 text-center blue-text ">Latest <span className="linear-text">Products</span> ({latestAllData.length})</h1>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 ">
         {latestAllData.map((data) => <PetCards key={data._id} data={data}></PetCards>)}
       </div>

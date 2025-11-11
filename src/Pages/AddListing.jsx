@@ -30,17 +30,53 @@ const AddListing = () => {
     const description = e.target.textarea.value;
     const image = e.target.image.value;
     const email = e.target.email.value;
-    const date = new Date();
-    console.log(name, category, Price, location, description, image, email, date);
-  };
+    const date = e.target.date.value;
   
+
+    const data = {
+      name,
+      category,
+      Price,
+      location,
+      description,
+      image,
+      email,
+      date,
+    };
+
+    console.log(data);
+
+    fetch("http://localhost:3000/allListing", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("data from add listing page", data);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Added successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        e.target.reset();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div>
       <div className="hero bg-base-200 min-h-screen">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <form onSubmit={handleAdd} className="card-body">
-              <h1 className="text-2xl font-bold text-center">
+        <div className="hero-content flex-col lg:flex-row-reverse ">
+          <div className="card bg-base-100 max-w-sm shrink-0 shadow-2xl">
+            <form onSubmit={handleAdd} className="card-body ">
+              <h1 className="text-2xl font-bold text-center linear-text">
                 Add New Listing
               </h1>
 
@@ -112,6 +148,7 @@ const AddListing = () => {
                 <input
                   type="text"
                   name="date"
+                  defaultValue={new Date()}
                   required
                   placeholder="Date(Pick Up)"
                   className="input"
