@@ -34,10 +34,10 @@ const PetSupplies = () => {
         All <span className="linear-text">Products</span> ({search.length})
       </h1>
 
-      <div className="justify-between flex">
-        <form onSubmit={handleSearch} className="join mb-5">
+      <div className="justify-between flex gap-3 px-5 md:px-0">
+        <form onSubmit={handleSearch} className="join mb-5 border border-[#045B98] rounded-sm">
           <div>
-            <label className="input input-info join-item">
+            <label className="input join-item">
               <svg
                 className="h-[1em] opacity-50"
                 xmlns="http://www.w3.org/2000/svg"
@@ -61,10 +61,10 @@ const PetSupplies = () => {
               />
             </label>
           </div>
-          <button className="btn join-item linear-btn ">Search</button>
+          <button className="btn join-item border-l bg-[#045B98] text-white">Search</button>
         </form>
 
-        <select onChange={handleFilter} defaultValue="Filter By Category" className="select select-info border-linear-text ">
+        <select onChange={handleFilter} defaultValue="Filter By Category" className="select border-[#045B98] ">
           <option disabled >Filter By Category</option>
           <option className="linear-text">Pets</option>
           <option className="linear-text">Pet Food</option>
@@ -73,7 +73,7 @@ const PetSupplies = () => {
         </select>
       </div>
 
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 ">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 px-5 md:px-0">
         {search.map((data) => (
           <PetCards key={data._id} data={data}></PetCards>
         ))}

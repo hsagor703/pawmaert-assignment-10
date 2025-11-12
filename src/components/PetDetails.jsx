@@ -20,9 +20,9 @@ const PetDetails = () => {
 
   return (
     <div>
-      <section className="py-12 bg-gray-50">
-        <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-2xl overflow-hidden flex items-center">
-          <div>
+      <section className="py-12 bg-gray-50 p-5">
+        <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-2xl overflow-hidden md:flex items-center">
+          <div className="">
             <img
               src={pet.image}
               alt={pet.name}
@@ -101,7 +101,7 @@ const PetDetails = () => {
                           className="card-body"
                         >
                           <h1 className="text-2xl font-bold text-center">
-                            Order Info
+                            Order <span className="linear-text">Info</span>
                           </h1>
 
                           <fieldset className="space-y-1">
@@ -124,42 +124,57 @@ const PetDetails = () => {
                               placeholder="Email"
                               name="email"
                               readOnly
+                              required
                             />
 
                             <label className="label">Product Id</label>
                             <input
                               type="text"
-                              // defaultValue={model.name}
+                              defaultValue={pet._id}
                               className="input"
                               placeholder="Product Id"
                               name="productId"
                               required
+                              readOnly
                             />
 
                             <label className="label">Product Name</label>
                             <input
                               type="text"
-                              // defaultValue={model.name}
+                              defaultValue={pet.name}
                               className="input"
                               placeholder="Product Name"
                               name="productName"
                               required
+                              readOnly
+                            />
+
+                            <label className="label">Product Quantity</label>
+                            <input
+                              type="text"
+                              // defaultValue={pet.name}
+                              className="input"
+                              placeholder="Product Quantity"
+                              name="productQuantity"
+                              required
+                              readOnly
                             />
 
                             <label className="label">Product Price</label>
                             <input
                               type="text"
-                              // defaultValue={model.name}
+                              defaultValue={pet.Price}
                               className="input"
                               placeholder="Product Price"
                               name="productPrice"
                               required
+                              readOnly
                             />
 
                             <label className="label">Address</label>
                             <input
                               type="text"
-                              // defaultValue={model.name}
+                              defaultValue={pet.location}
                               className="input"
                               placeholder="Address"
                               name="address"
