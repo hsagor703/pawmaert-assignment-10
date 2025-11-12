@@ -27,7 +27,7 @@ const PetCards = ({ data }) => {
           <div className="card-actions ">
             {/* /productDetails/${_id} */}
             <Link
-              to={``}
+              to={`/petDetails/${_id}`}
               className="btn w-full linear-btn font-semibold"
             >
               View Details

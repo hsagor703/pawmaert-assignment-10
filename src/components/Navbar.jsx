@@ -9,6 +9,8 @@ import { LuLogIn } from "react-icons/lu";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import avatar from "../assets/avatar.png";
+import { TbLogout2 } from "react-icons/tb";
+import { CiLogout } from "react-icons/ci";
 
 const Navbar = () => {
   const { logOut, user } = use(AuthContext);
@@ -121,11 +123,16 @@ const Navbar = () => {
               alt={user ? user.displayName : "guest"}
             />
 
-            {hover && <p className="absolute top-14 left-6 -translate-x-1/2 bg-black text-white text-sm px-3 py-1 rounded-md shadow-md whitespace-nowrap">{user?.displayName}</p>}
+            {hover && (
+              <p className="absolute top-14 left-6 -translate-x-1/2 bg-black text-white text-sm px-3 py-1 rounded-md shadow-md whitespace-nowrap">
+                {user?.displayName}
+              </p>
+            )}
           </div>
 
           {user ? (
             <button onClick={handleLogout} className="btn linear-btn">
+              <CiLogout className="text-md" />
               Logout
             </button>
           ) : (

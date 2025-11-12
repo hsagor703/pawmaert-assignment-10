@@ -1,5 +1,5 @@
 import React, { use, useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -7,6 +7,8 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 const Register = () => {
   const { createUser, signinWithGoogle } = use(AuthContext);
   const [show, setShow] = useState(true);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -31,6 +33,8 @@ const Register = () => {
           icon: "success",
           draggable: true,
         });
+        navigate('/')
+
       })
       .catch((err) => {
         console.log(err.code);
@@ -52,6 +56,7 @@ const Register = () => {
           icon: "success",
           draggable: true,
         });
+        navigate(`${location.state? location.state : '/'}`)
       })
       .catch((err) => {
         console.log(err.code);

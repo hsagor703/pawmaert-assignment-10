@@ -31,7 +31,6 @@ const AddListing = () => {
     const image = e.target.image.value;
     const email = e.target.email.value;
     const date = e.target.date.value;
-  
 
     const data = {
       name,
@@ -71,107 +70,100 @@ const AddListing = () => {
   };
 
   return (
-    <div>
-      <div className="hero bg-base-200 min-h-screen">
-        <div className="hero-content flex-col lg:flex-row-reverse ">
-          <div className="card bg-base-100 max-w-sm shrink-0 shadow-2xl">
-            <form onSubmit={handleAdd} className="card-body ">
-              <h1 className="text-2xl font-bold text-center linear-text">
-                Add New Listing
-              </h1>
+    <div className="bg-[#045b9520] py-10">
+      <div className="card bg-[#045b9510]
+      shrink-0 shadow-2xl md:w-130 md:mx-auto  mx-5">
+        <form onSubmit={handleAdd} className="card-body ">
+          <h1 className="text-2xl font-bold text-center linear-text">
+            Add New Listing
+          </h1>
 
-              <fieldset className="space-y-1">
-                <label className="label">Name</label>
-                <input
-                  type="text"
-                  className="input"
-                  placeholder="Name"
-                  name="name"
-                  required
-                />
+          <fieldset className="space-y-1 ">
+            <label className="label">Name</label><br />
+            <input
+              type="text"
+              className="input w-full bg-[#045b9520]"
+              placeholder="Name"
+              name="name"
+              required
+            /> <br />
 
-                <label className="label">Category</label>
-                <select
-                  onChange={handleCategoryChange}
-                  //   defaultValue={model.category}
-                  name="category"
-                  required
-                  className="select appearance-none"
-                >
-                  <option disabled>choose category</option>
-                  <option>Foods</option>
-                  <option>Accessories</option>
-                  <option>Pets</option>
-                  <option>Care Products</option>
-                </select>
+            <label className="label">Category</label><br />
+            <select
+              onChange={handleCategoryChange}
+              //   defaultValue={model.category}
+              name="category"
+              required
+              className="select appearance-none w-full bg-[#045b9520]"
+            >
+              <option disabled>choose category</option>
+              <option>Foods</option>
+              <option>Accessories</option>
+              <option>Pets</option>
+              <option>Care Products</option>
+            </select><br />
 
-                <label className="label">price</label>
-                <input
-                  onChange={handlePrice}
-                  type="number"
-                  value={price}
-                  name="price"
-                  placeholder="your price here"
-                  required
-                  readOnly={category === "Pets"}
-                  className="input"
-                ></input>
+            <label className="label">price</label><br />
+            <input
+              onChange={handlePrice}
+              type="number"
+              value={price}
+              name="price"
+              placeholder="your price here"
+              required
+              readOnly={category === "Pets"}
+              className="input w-full bg-[#045b9520]"
+            ></input><br />
 
-                <label className="label">Location</label>
-                <input
-                  type="text"
-                  name="location"
-                  placeholder="your location here"
-                  required
-                  className="input"
-                ></input>
+            <label className="label">Location</label><br />
+            <input
+              type="text"
+              name="location"
+              placeholder="your location here"
+              required
+              className="input w-full bg-[#045b9520]"
+            ></input><br />
 
-                <label className="label">Description</label>
-                <textarea
-                  placeholder="Enter Description"
-                  name="textarea"
-                  rows="6"
-                  required
-                  className="textarea border-[#045B98]"
-                ></textarea>
+            <label className="label">Description</label><br />
+            <textarea
+              placeholder="Enter Description"
+              name="textarea"
+              rows="6"
+              required
+              className="textarea w-full bg-[#045b9520] border-[#045B98]"
+            ></textarea><br />
 
-                <label className="label">image URL</label>
-                <input
-                  type="text"
-                  className="input"
-                  placeholder="image_url"
-                  name="image"
-                  required
-                />
+            <label className="label">image URL</label><br />
+            <input
+              type="text"
+              className="input w-full bg-[#045b9520]"
+              placeholder="image_url"
+              name="image"
+              required
+            /><br />
 
-                <label className="label">Date</label>
-                <input
-                  type="text"
-                  name="date"
-                  defaultValue={new Date()}
-                  required
-                  placeholder="Date(Pick Up)"
-                  className="input"
-                ></input>
+            <label className="label">Date</label><br />
+            <input
+              type="text"
+              name="date"
+              defaultValue={new Date()}
+              required
+              placeholder="Date(Pick Up)"
+              className="input w-full bg-[#045b9520]"
+            ></input><br />
 
-                <label className="label">Email</label>
-                <input
-                  defaultValue={user.email}
-                  name="email"
-                  readOnly
-                  className="input"
-                ></input>
+            <label className="label">Email</label><br />
+            <input
+              defaultValue={user.email}
+              name="email"
+              readOnly
+              className="input w-full bg-[#045b9520]"
+            ></input><br />
 
-                <button className="btn w-full my-2 linear-btn">Add</button>
-                <div className="flex items-center gap-5 justify-center">
-                  <div className="h-px w-1/2 bg-white/30"></div>
-                  <p className="mb-2 text-white/70">or</p>
-                  <div className="h-px w-1/2 bg-white/30"></div>
-                </div>
-              </fieldset>
-            </form>
-          </div>
-        </div>
+            <button className="btn w-full my-2 linear-btn">Add</button>
+            
+          </fieldset>
+        </form>
       </div>
     </div>
   );

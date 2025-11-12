@@ -8,6 +8,7 @@ import MyOrders from "../Pages/MyOrders";
 import Login from "../components/Login";
 import Register from "../components/Register";
 import PrivateRouter from "../Provider/PrivateRouter";
+import PetDetails from "../components/PetDetails";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,12 @@ const router = createBrowserRouter([
         path: "my-orders",
         element:<PrivateRouter>
             <MyOrders/>
+        </PrivateRouter>
+      },
+      {
+        path: "petDetails/:id",
+        element:<PrivateRouter>
+            <PetDetails/>
         </PrivateRouter>
       },
       {

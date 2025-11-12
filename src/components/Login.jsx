@@ -1,18 +1,20 @@
 import React, { use, useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const { loginWithEmailPassword, signinWithGoogle } = use(AuthContext);
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(true);
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log("from login page", location);
 
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
     loginWithEmailPassword(email, password)
       .then((user) => {
         console.log(user.user);
@@ -21,6 +23,7 @@ const Login = () => {
           icon: "success",
           draggable: true,
         });
+        navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((err) => {
         Swal.fire({
@@ -41,6 +44,7 @@ const Login = () => {
           icon: "success",
           draggable: true,
         });
+        navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((err) => {
         console.log(err.code);
@@ -85,7 +89,7 @@ const Login = () => {
                 Password
               </label>
               <input
-                type={show? "password" : "text" }
+                type={show ? "password" : "text"}
                 // type="password"
                 name="password"
                 placeholder="Enter your password"
