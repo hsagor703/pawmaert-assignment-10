@@ -1,21 +1,90 @@
-import React, { use, useRef } from "react";
+import React, { use, useEffect, useRef, useState } from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { Link, useParams } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const promise = fetch("http://localhost:3000/allListing").then((res) =>
   res.json()
 );
 
 const PetDetails = () => {
+  const [category, setCategory] = useState("");
+  const [quantity, setQuantity] = useState("");
+  console.log("category from pet details", category);
   const details = use(promise);
   const { id } = useParams();
-  const {user} = use(AuthContext);
+  const { user } = use(AuthContext);
   const modalRef = useRef(null);
   const pet = details.find((data) => data._id === id);
+  useEffect(() => {
+    setCategory(pet.category);
+    if (category === "Pets") {
+      setQuantity(1);
+    } else {
+      setQuantity("");
+    }
+  }, [pet, category]);
 
   const handleOrder = () => {
     modalRef.current.showModal();
+  };
+
+  const handleQuantity = (e) => {
+    const quantity = e.target.value;
+    setQuantity(quantity);
+  };
+
+  const handleOrderSubmission = (e) => {
+    e.preventDefault();
+    const productId = e.target.productId.value;
+    const productName = e.target.productName.value;
+    const buyerName = e.target.buyerName.value;
+    const email = e.target.email.value;
+    const quantity = e.target.quantity.value;
+    const price = e.target.price.value;
+    const address = e.target.address.value;
+    const phone = e.target.phone.value;
+    const date = e.target.date.value;
+    const additionalNotes = e.target.additionalNotes.value;
+
+    const orderInfo = {
+      productId,
+      productName,
+      buyerName,
+      email,
+      quantity,
+      price,
+      address,
+      phone,
+      date,
+      additionalNotes,
+    };
+    console.log("from pet details order form", orderInfo);
+
+    fetch("http://localhost:3000/orderList", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(orderInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        modalRef.current.close();
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Ordered successfully Submitted",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        e.target.reset();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -95,9 +164,9 @@ const PetDetails = () => {
                 <div className="modal-box">
                   <div className="hero bg-base-200 min-h-screen">
                     <div className="hero-content flex-col lg:flex-row-reverse">
-                      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                      <div className="card bg-base-100 max-w-sm shrink-0 shadow-2xl">
                         <form
-                          onSubmit={"handleUpdateProduct"}
+                          onSubmit={handleOrderSubmission}
                           className="card-body"
                         >
                           <h1 className="text-2xl font-bold text-center">
@@ -111,7 +180,7 @@ const PetDetails = () => {
                               defaultValue={user.displayName}
                               className="input"
                               placeholder="Name"
-                              name="name"
+                              name="buyerName"
                               required
                               readOnly
                             />
@@ -151,13 +220,14 @@ const PetDetails = () => {
 
                             <label className="label">Product Quantity</label>
                             <input
+                              onChange={handleQuantity}
                               type="text"
-                              // defaultValue={pet.name}
+                              defaultValue={quantity}
                               className="input"
                               placeholder="Product Quantity"
-                              name="productQuantity"
+                              name="quantity"
                               required
-                              readOnly
+                              readOnly={category === "Pets"}
                             />
 
                             <label className="label">Product Price</label>
@@ -166,7 +236,7 @@ const PetDetails = () => {
                               defaultValue={pet.Price}
                               className="input"
                               placeholder="Product Price"
-                              name="productPrice"
+                              name="price"
                               required
                               readOnly
                             />
@@ -184,7 +254,11 @@ const PetDetails = () => {
                             <label className="label">Date</label>
                             <input
                               type="text"
-                              defaultValue={new Date()}
+                              defaultValue={new Date()
+                                .toLocaleDateString()
+                                .split("/")
+                                .reverse()
+                                .join("-")}
                               className="input"
                               placeholder="Date (pick up)"
                               name="date"
@@ -205,7 +279,7 @@ const PetDetails = () => {
                             <textarea
                               placeholder="Enter Additional Note"
                               // defaultValue={model.description}
-                              name="textarea"
+                              name="additionalNotes"
                               rows="6"
                               required
                               className="textarea textarea-primary"

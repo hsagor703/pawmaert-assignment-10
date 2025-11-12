@@ -71,24 +71,28 @@ const AddListing = () => {
 
   return (
     <div className="bg-[#045b9520] py-10">
-      <div className="card bg-[#045b9510]
-      shrink-0 shadow-2xl md:w-130 md:mx-auto  mx-5">
+      <div
+        className="card bg-[#045b9510]
+      shrink-0 shadow-2xl md:w-130 md:mx-auto  mx-5"
+      >
         <form onSubmit={handleAdd} className="card-body ">
           <h1 className="text-2xl font-bold text-center linear-text">
             Add New Listing
           </h1>
 
           <fieldset className="space-y-1 ">
-            <label className="label">Name</label><br />
+            <label className="label">Name</label>
+            <br />
             <input
               type="text"
               className="input w-full bg-[#045b9520]"
               placeholder="Name"
               name="name"
               required
-            /> <br />
-
-            <label className="label">Category</label><br />
+            />{" "}
+            <br />
+            <label className="label">Category</label>
+            <br />
             <select
               onChange={handleCategoryChange}
               //   defaultValue={model.category}
@@ -101,9 +105,10 @@ const AddListing = () => {
               <option>Accessories</option>
               <option>Pets</option>
               <option>Care Products</option>
-            </select><br />
-
-            <label className="label">price</label><br />
+            </select>
+            <br />
+            <label className="label">price</label>
+            <br />
             <input
               onChange={handlePrice}
               type="number"
@@ -113,55 +118,59 @@ const AddListing = () => {
               required
               readOnly={category === "Pets"}
               className="input w-full bg-[#045b9520]"
-            ></input><br />
-
-            <label className="label">Location</label><br />
+            ></input>
+            <br />
+            <label className="label">Location</label>
+            <br />
             <input
               type="text"
               name="location"
               placeholder="your location here"
               required
               className="input w-full bg-[#045b9520]"
-            ></input><br />
-
-            <label className="label">Description</label><br />
+            ></input>
+            <br />
+            <label className="label">Description</label>
+            <br />
             <textarea
               placeholder="Enter Description"
               name="textarea"
               rows="6"
               required
               className="textarea w-full bg-[#045b9520] border-[#045B98]"
-            ></textarea><br />
-
-            <label className="label">image URL</label><br />
+            ></textarea>
+            <br />
+            <label className="label">image URL</label>
+            <br />
             <input
               type="text"
               className="input w-full bg-[#045b9520]"
               placeholder="image_url"
               name="image"
               required
-            /><br />
-
-            <label className="label">Date</label><br />
+            />
+            <br />
+            <label className="label">Date</label>
+            <br />
             <input
               type="text"
               name="date"
-              defaultValue={new Date()}
+              defaultValue={new Date().toLocaleDateString().split("/").reverse().join("-")}
               required
               placeholder="Date(Pick Up)"
               className="input w-full bg-[#045b9520]"
-            ></input><br />
-
-            <label className="label">Email</label><br />
+            ></input>
+            <br />
+            <label className="label">Email</label>
+            <br />
             <input
               defaultValue={user.email}
               name="email"
               readOnly
               className="input w-full bg-[#045b9520]"
-            ></input><br />
-
+            ></input>
+            <br />
             <button className="btn w-full my-2 linear-btn">Add</button>
-            
           </fieldset>
         </form>
       </div>
