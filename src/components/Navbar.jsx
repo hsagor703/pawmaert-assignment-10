@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router";
 import logo from "../assets/1762692019828-removebg-preview.png";
 import { FaHome } from "react-icons/fa";
@@ -15,7 +15,17 @@ import { CiLogout } from "react-icons/ci";
 const Navbar = () => {
   const { logOut, user } = use(AuthContext);
   const [hover, setHover] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
+  useEffect(() => {
+    const html = document.querySelector("html");
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const handleTheme = (checked) => {
+    setTheme(checked ? "dark" : "light");
+  };
   const handleLogout = () => {
     logOut()
       .then(() => {
@@ -33,6 +43,7 @@ const Navbar = () => {
         });
       });
   };
+
   const links = (
     <>
       <li>
@@ -112,6 +123,13 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
+          <input
+            onChange={(e) => handleTheme(e.target.checked)}
+            type="checkbox"
+            value="synthwave"
+            className="toggle theme-controller mr-5"
+          />
+
           <div
             className="relative"
             onMouseEnter={() => setHover(true)}

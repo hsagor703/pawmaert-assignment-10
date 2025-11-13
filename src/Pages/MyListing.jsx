@@ -7,8 +7,6 @@ const MyListing = () => {
   const modalRef = useRef(null);
   const [listings, setListings] = useState([]);
 
-  console.log("delete", listings);
-
   useEffect(() => {
     fetch(`http://localhost:3000/myListing?email=${user.email}`)
       .then((res) => res.json())
@@ -44,8 +42,10 @@ const MyListing = () => {
               icon: "success",
             });
 
-            const remainingListings = listings.filter(list => list._id !==id);
-            setListings(remainingListings)
+            const remainingListings = listings.filter(
+              (list) => list._id !== id
+            );
+            setListings(remainingListings);
           }
         })
         .catch((err) => {
@@ -56,6 +56,24 @@ const MyListing = () => {
 
   const handleUpdate = () => {
     modalRef.current.showModal();
+  };
+
+  const handleUpdateSubmission = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const category = e.target.category.value;
+    const Price = e.target.price.value;
+    const location = e.target.location.value;
+
+    const updateData = {
+      name,
+      category,
+      Price,
+      location,
+    };
+    console.log(updateData);
+
+
   };
 
   return (
@@ -132,32 +150,29 @@ const MyListing = () => {
                           <div className="hero-content flex-col lg:flex-row-reverse">
                             <div className="card bg-base-100 max-w-sm shrink-0 shadow-2xl">
                               <form
-                                onSubmit={"handleOrderSubmission"}
+                                onSubmit={handleUpdateSubmission}
                                 className="card-body"
                               >
                                 <h1 className="text-2xl font-bold text-center">
-                                  Update{" "}
-                                  <span className="linear-text">Info</span>
+                                  Update
+                                  <span className="linear-text"> Info</span>
                                 </h1>
 
                                 <fieldset className="space-y-1">
                                   <label className="label">Buyer Name</label>
                                   <input
                                     type="text"
-                                    // defaultValue={user.displayName}
                                     className="input"
                                     placeholder="Name"
-                                    name="buyerName"
+                                    name="name"
                                     required
-                                    readOnly
                                   />
 
+                                  <label className="label">Category</label>
                                   <select
-                                    onChange={"handleCategoryChange"}
-                                    //   defaultValue={model.category}
                                     name="category"
                                     required
-                                    className="select appearance-none w-full bg-[#045b9520]"
+                                    className="select appearance-none bg-[#045b9520]"
                                   >
                                     <option disabled>choose category</option>
                                     <option>Foods</option>
@@ -169,23 +184,19 @@ const MyListing = () => {
                                   <label className="label">Price</label>
                                   <input
                                     type="text"
-                                    // defaultValue={user.email}
                                     className="input"
                                     placeholder="price"
                                     name="price"
-                                    readOnly
                                     required
                                   />
 
                                   <label className="label">Location</label>
                                   <input
                                     type="text"
-                                    // defaultValue={pet._id}
                                     className="input"
                                     placeholder="Location"
-                                    name="productId"
+                                    name="location"
                                     required
-                                    readOnly
                                   />
 
                                   <button className="btn linear-btn w-full">
