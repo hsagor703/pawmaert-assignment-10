@@ -4,6 +4,7 @@ import LatestListing from "../components/LatestListing";
 import PetCards from "../components/PetCards";
 import PetHeroes from "../components/PetHeroes";
 import WhyAdopt from "../components/WhyAdopt";
+import Loading from "./Loading";
 
 const Home = () => {
   return (

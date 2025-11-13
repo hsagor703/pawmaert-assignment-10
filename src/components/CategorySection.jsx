@@ -1,8 +1,8 @@
-import React from "react";
+import { Link } from "react-router";
 
 const categories = [
   {
-    name: "Pets (Adoption)",
+    name: "Pets",
     icon: "🐾",
     description: "Find adorable pets ready for a loving home.",
   },
@@ -23,17 +23,20 @@ const categories = [
   },
 ];
 
+
 const CategorySection = () => {
+  
   return (
     <section className="py-12 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold mb-8 text-gray-800">
-          Explore Our <span className="text-[#045B98]">Categories</span>
+          Explore Our Categories
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {categories.map((cat, index) => (
-            <div
+            <Link to={`/productListing/${cat.name}`}
+              onClick={'handleFilter'}
               key={index}
               className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition duration-300"
             >
@@ -42,7 +45,7 @@ const CategorySection = () => {
                 {cat.name}
               </h3>
               <p className="text-gray-500 text-sm">{cat.description}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

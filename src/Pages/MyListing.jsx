@@ -1,5 +1,6 @@
 import React, { use, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const MyListing = () => {
   const { user } = use(AuthContext);
@@ -19,20 +20,36 @@ const MyListing = () => {
   }, [user]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:3000/allListing/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("success fully deleted", data);
-        alert("deleted");
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      fetch(`http://localhost:3000/allListing/${id}`, {
+        method: "DELETE",
       })
-      .catch((err) => {
-        console.log(err);
-      });
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("success fully deleted", data);
+          if (result.isConfirmed) {
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success",
+            });
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    });
   };
 
-  const handleUpdate = (id) => {
+  const handleUpdate = () => {
     modalRef.current.showModal();
   };
 

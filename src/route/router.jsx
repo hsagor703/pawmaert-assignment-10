@@ -9,6 +9,9 @@ import Login from "../components/Login";
 import Register from "../components/Register";
 import PrivateRouter from "../Provider/PrivateRouter";
 import PetDetails from "../components/PetDetails";
+import ProductListing from "../Pages/ProductListing";
+import ErrorPage1 from "../Pages/ErrorPage1";
+import ErrorPage2 from "../Pages/ErrorPage2";
 
 const router = createBrowserRouter([
   {
@@ -33,21 +36,35 @@ const router = createBrowserRouter([
       },
       {
         path: "my-listing",
-        element:<PrivateRouter>
-            <MyListing/>
-        </PrivateRouter>
+        element: (
+          <PrivateRouter>
+            <MyListing />
+          </PrivateRouter>
+        ),
       },
       {
         path: "my-orders",
-        element:<PrivateRouter>
-            <MyOrders/>
-        </PrivateRouter>
+        element: (
+          <PrivateRouter>
+            <MyOrders />
+          </PrivateRouter>
+        ),
       },
       {
         path: "petDetails/:id",
-        element:<PrivateRouter>
-            <PetDetails/>
-        </PrivateRouter>
+        element: (
+          <PrivateRouter>
+            <PetDetails />
+          </PrivateRouter>
+        ),
+      },
+      {
+        path: "productListing/:category",
+        element: (
+          <PrivateRouter>
+            <ProductListing />
+          </PrivateRouter>
+        ),
       },
       {
         path: "login",
@@ -58,6 +75,14 @@ const router = createBrowserRouter([
         Component: Register,
       },
     ],
+  },
+  {
+    path: "/*",
+    element:<ErrorPage2/>,
+  },
+  {
+    path: "errorPage",
+    element:<ErrorPage1/>,
   },
 ]);
 

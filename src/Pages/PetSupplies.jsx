@@ -1,5 +1,9 @@
 import React, { use, useState } from "react";
 import PetCards from "../components/PetCards";
+import { AuthContext } from "../Provider/AuthProvider";
+import ErrorPage2 from "./ErrorPage2";
+import ErrorPage1 from "./ErrorPage1";
+import { Link, useNavigate } from "react-router";
 
 const promise = fetch("http://localhost:3000/allListing").then((res) =>
   res.json()
@@ -7,7 +11,8 @@ const promise = fetch("http://localhost:3000/allListing").then((res) =>
 const PetSupplies = () => {
   const allListing = use(promise);
   const [search, setSearch] = useState(allListing);
-
+  const { loading } = use(AuthContext);
+  const navigate = useNavigate();
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -23,11 +28,14 @@ const PetSupplies = () => {
 
   const handleFilter = (e) => {
     const filter = e.target.value;
-    fetch(`http://localhost:3000/filter?filter=${filter}`).then(res => res.json()).then(data => {
-      console.log(data);
-      setSearch(data)
-    })
-  }
+    fetch(`http://localhost:3000/filter?filter=${filter}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setSearch(data);
+      });
+  };
+
   return (
     <div className="container mx-auto">
       <h1 className="text-5xl font-bold my-15 text-center blue-text ">
@@ -35,7 +43,10 @@ const PetSupplies = () => {
       </h1>
 
       <div className="justify-between flex gap-3 px-5 md:px-0">
-        <form onSubmit={handleSearch} className="join mb-5 border border-[#045B98] rounded-sm">
+        <form
+          onSubmit={handleSearch}
+          className="join mb-5 border border-[#045B98] rounded-sm"
+        >
           <div>
             <label className="input join-item">
               <svg
@@ -54,24 +65,46 @@ const PetSupplies = () => {
                   <path d="m21 21-4.3-4.3"></path>
                 </g>
               </svg>
-              <input
-                type="text"
-                name="search"
-                placeholder="search by name"
-              />
+              <input type="text" name="search" placeholder="search by name" />
             </label>
           </div>
-          <button className="btn join-item border-l bg-[#045B98] text-white">Search</button>
+          <button className="btn join-item border-l bg-[#045B98] text-white">
+            Search
+          </button>
         </form>
 
-        <select onChange={handleFilter} defaultValue="Filter By Category" className="select border-[#045B98] ">
-          <option disabled >Filter By Category</option>
+        <select
+          onChange={handleFilter}
+          defaultValue="Filter By Category"
+          className="select border-[#045B98] "
+        >
+          <option disabled>Filter By Category</option>
           <option className="linear-text">Pets</option>
           <option className="linear-text">Pet Food</option>
           <option className="linear-text">Accessories</option>
           <option className="linear-text">Pet Care Products</option>
         </select>
       </div>
+
+      {search.length === 0 && (
+        <>
+          <div className="flex flex-col items-center justify-center bg-gray-100 text-center p-4 mb-5">
+            <h2 className="text-3xl font-semibold mt-4 text-gray-800">
+              No Data Found
+            </h2>
+            <p className="text-gray-600 mt-2 max-w-md">
+              Oops! The data you’re looking for doesn’t exist or may have been
+              moved.
+            </p>
+
+            <button
+              className="mt-6 btn border border-[#053345] linear-text rounded-lg transition duration-200"
+            >
+              Re-Search again
+            </button>
+          </div>
+        </>
+      )}
 
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 px-5 md:px-0">
         {search.map((data) => (
