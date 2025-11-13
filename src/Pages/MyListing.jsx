@@ -7,6 +7,8 @@ const MyListing = () => {
   const modalRef = useRef(null);
   const [listings, setListings] = useState([]);
 
+  console.log("delete", listings);
+
   useEffect(() => {
     fetch(`http://localhost:3000/myListing?email=${user.email}`)
       .then((res) => res.json())
@@ -41,6 +43,9 @@ const MyListing = () => {
               text: "Your file has been deleted.",
               icon: "success",
             });
+
+            const remainingListings = listings.filter(list => list._id !==id);
+            setListings(remainingListings)
           }
         })
         .catch((err) => {

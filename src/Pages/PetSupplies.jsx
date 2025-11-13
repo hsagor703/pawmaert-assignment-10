@@ -17,7 +17,6 @@ const PetSupplies = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     const search = e.target.search.value;
-    console.log("search successfully", search);
     fetch(`http://localhost:3000/search?search=${search}`)
       .then((res) => res.json())
       .then((data) => {

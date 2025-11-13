@@ -9,7 +9,6 @@ const Login = () => {
   const [show, setShow] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
-  console.log("from login page", location);
 
   const handleLogin = (e) => {
     e.preventDefault();

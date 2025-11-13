@@ -1,16 +1,51 @@
-# React + Vite
+<!-- Readme.md: Add a meaningful readme.md file with the name of your website
+and a live site URL on client side. Include a minimum of five bullet points to
+feature your website. -->
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🐾 Pet Adoption and Supply Portal — “PawMart”
 
-Currently, two official plugins are available:
+## 🏷️ Project Name
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**PawMart**
 
-## React Compiler
+## 🎯 Purpose
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**PawMart** is a community-driven platform where pet owners, breeders, and shops can list pets
+for adoption or sell pet-related products (food, toys, accessories, etc.). Buyers and adopters can
+browse, contact, and order directly.
 
-## Expanding the ESLint configuration
+## 🌐 Live URL Client Side
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🌐 Live URL Server Side
+
+## 🚀 Github Repository Link client side
+
+## 🚀 Github Repository Link server side
+
+## ⚙️ Key Features
+
+- 🧑‍💻 **User Authentication** (SIGHUP & Login with Firebase)
+- 🐶 **Pet Services Listing** (with image, name, price & rating)
+- 🔍 **View Details Page** for each service
+- ❄️ **Why Adopt from PawMart?** section
+- 👩‍⚕️ **Meet Our Pet Heroes** section
+- 📱 **Responsive Design** for all devices
+- 🔔 **Error & Success Toast Messages**
+- 🔄 **Loading Spinner** while data is fetching
+- 🧭 **Persistent Navbar & Footer**
+- 🌐 **Persistent backend server side**
+
+---
+
+## 📦 NPM Packages Used
+
+| Package            | Purpose                           |
+| ------------------ | --------------------------------- |
+| **react-router**   | For routing and navigation        |
+| **firebase**       | For authentication (login/sighup) |
+| **react-icons**    | For using modern icons            |
+| **react-toastify** | For showing toast notifications   |
+| **react-loading**  | For showing loading spinners      |
+| **tailwindcss**    | For styling and responsive design |
+
+---

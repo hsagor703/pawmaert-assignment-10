@@ -11,7 +11,6 @@ const promise = fetch("http://localhost:3000/allListing").then((res) =>
 const PetDetails = () => {
   const [category, setCategory] = useState("");
   const [quantity, setQuantity] = useState("");
-  console.log("category from pet details", category);
   const details = use(promise);
   const { id } = useParams();
   const { user } = use(AuthContext);
@@ -60,7 +59,6 @@ const PetDetails = () => {
       date,
       additionalNotes,
     };
-    console.log("from pet details order form", orderInfo);
 
     fetch("http://localhost:3000/orderList", {
       method: "POST",

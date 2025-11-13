@@ -7,7 +7,6 @@ const ProductListing = () => {
   const { category } = useParams();
   const [filterData, setFilterData] = useState([]);
 
-  console.log("filter from productListing", filterData);
 
   useEffect(() => {
     fetch(`http://localhost:3000/filter?filter=${category}`)

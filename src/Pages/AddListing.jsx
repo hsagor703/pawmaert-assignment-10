@@ -43,7 +43,6 @@ const AddListing = () => {
       date,
     };
 
-    console.log(data);
 
     fetch("http://localhost:3000/allListing", {
       method: "POST",
@@ -54,7 +53,6 @@ const AddListing = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("data from add listing page", data);
         Swal.fire({
           position: "center",
           icon: "success",
