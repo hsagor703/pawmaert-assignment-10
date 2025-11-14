@@ -16,11 +16,19 @@ browse, contact, and order directly.
 
 ## 🌐 Live URL Client Side
 
+https://pawmart-assignment.web.app/
+
 ## 🌐 Live URL Server Side
+
+https://pawmart-assignment-10-server.vercel.app/
 
 ## 🚀 Github Repository Link client side
 
+https://github.com/hsagor703/pawmaert-assignment-10
+
 ## 🚀 Github Repository Link server side
+
+https://github.com/hsagor703/pawmaert-assignment-10-server
 
 ## ⚙️ Key Features
 

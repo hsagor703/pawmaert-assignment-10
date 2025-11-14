@@ -2,12 +2,12 @@ import React from "react";
 
 const WhyAdopt = () => {
   return (
-    <section className="py-16 bg-gradient-to-r from-blue-50 to-green-50">
+    <section className="py-16 ">
       <div className="max-w-5xl mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">
+        <h2 className="text-3xl font-bold mb-4">
           Why Adopt from <span className="linear-text">PawMart?</span>
         </h2>
-        <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
+        <p className=" text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
           Every year, countless loving pets wait for a second chance at life.
           When you adopt from{" "}
           <span className="font-semibold linear-text">PawMart</span>, you’re

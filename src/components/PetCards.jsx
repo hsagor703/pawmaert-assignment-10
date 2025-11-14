@@ -5,7 +5,7 @@ const PetCards = ({ data }) => {
   const { name, Price, category, location, image, _id } = data;
   return (
     <div>
-      <div className="card bg-base-100  shadow-sm">
+      <div className="card bg-base-100 shadow-sm  border border-blue-100">
         <figure className="h-48 overflow-hidden">
           <img
             src={image}

@@ -44,7 +44,7 @@ const PetHeroes = () => {
   return (
     <section className="py-12 bg-base-200 mb-10">
       <div className="max-w-6xl mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-2">
+        <h2 className="text-3xl font-bold  mb-2">
           🩺 Meet Our <span className="linear-text">Pet Heroes</span>
         </h2>
         <p className="text-gray-500 mb-8">

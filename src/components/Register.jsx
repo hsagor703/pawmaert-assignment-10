@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Typewriter } from "react-simple-typewriter";
 
 const Register = () => {
   const { createUser, signinWithGoogle } = use(AuthContext);
@@ -33,8 +34,7 @@ const Register = () => {
           icon: "success",
           draggable: true,
         });
-        navigate('/')
-
+        navigate("/");
       })
       .catch((err) => {
         console.log(err.code);
@@ -56,7 +56,7 @@ const Register = () => {
           icon: "success",
           draggable: true,
         });
-        navigate(`${location.state? location.state : '/'}`)
+        navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((err) => {
         console.log(err.code);
@@ -74,7 +74,16 @@ const Register = () => {
         <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
           {/* Title */}
           <h1 className="text-3xl font-bold text-center linear-text mb-6">
-            Sign Up
+            Sign Up Your
+            <Typewriter
+              words={[" Account"]}
+              loop={false}
+              cursor
+              cursorStyle="_"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            ></Typewriter>
           </h1>
 
           {/* Signup Form */}

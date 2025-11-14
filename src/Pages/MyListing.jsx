@@ -1,18 +1,23 @@
 import React, { use, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import Loading2 from "./Loading2";
 
 const MyListing = () => {
   const { user } = use(AuthContext);
+  const [loading, setLoading] = useState(true);
   const modalRef = useRef(null);
   const [listings, setListings] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/myListing?email=${user.email}`)
+    fetch(
+      `https://pawmart-assignment-10-server.vercel.app/myListing?email=${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setListings(data);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
@@ -29,9 +34,12 @@ const MyListing = () => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
-      fetch(`http://localhost:3000/allListing/${id}`, {
-        method: "DELETE",
-      })
+      fetch(
+        `https://pawmart-assignment-10-server.vercel.app/allListing/${id}`,
+        {
+          method: "DELETE",
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log("success fully deleted", data);
@@ -58,32 +66,56 @@ const MyListing = () => {
     modalRef.current.showModal();
   };
 
-  const handleUpdateSubmission = (e) => {
+  const handleUpdateSubmission = (e, id) => {
     e.preventDefault();
     const name = e.target.name.value;
     const category = e.target.category.value;
     const Price = e.target.price.value;
     const location = e.target.location.value;
-
     const updateData = {
       name,
       category,
       Price,
       location,
     };
-    console.log(updateData);
 
-
+    fetch(`https://pawmart-assignment-10-server.vercel.app/myListing/${id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updateData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        // setListings(data)
+        modalRef.current.close();
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Update successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        const updatedData = listings.map((list) =>
+          list._id === id ? { ...list, ...updateData } : list
+        );
+        setListings(updatedData);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
-    <section className="py-12 bg-gray-50 ">
+    <section className="py-12 ">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+        <h2 className="text-3xl font-bold mb-8 text-center">
           My <span className="linear-text">Listings</span>
         </h2>
 
-        <div className="overflow-x-auto bg-white shadow-md rounded-lg">
+        <div className="overflow-x-auto  shadow-md rounded-lg">
           <table className="min-w-full border border-gray-200 text-left">
             <thead className="bg-blue-100 text-gray-700">
               <tr>
@@ -96,13 +128,13 @@ const MyListing = () => {
               </tr>
             </thead>
             <tbody>
-              {listings.map((item, index) => (
+              {listings?.map((item, index) => (
                 <tr
                   key={item._id}
-                  className="hover:bg-gray-50 transition duration-200"
+                  className="hover:bg-blue-300 transition duration-200"
                 >
                   <td className="py-3 px-4 border-b">{index + 1}</td>
-                  <td className="py-3 px-4 border-b font-medium text-gray-800">
+                  <td className="py-3 px-4 border-b font-medium">
                     {item.name}
                   </td>
                   <td className="py-3 px-4 border-b">{item.category}</td>
@@ -150,7 +182,9 @@ const MyListing = () => {
                           <div className="hero-content flex-col lg:flex-row-reverse">
                             <div className="card bg-base-100 max-w-sm shrink-0 shadow-2xl">
                               <form
-                                onSubmit={handleUpdateSubmission}
+                                onSubmit={(e) =>
+                                  handleUpdateSubmission(e, item._id)
+                                }
                                 className="card-body"
                               >
                                 <h1 className="text-2xl font-bold text-center">
@@ -222,11 +256,16 @@ const MyListing = () => {
           </table>
         </div>
 
-        {listings.length === 0 && (
-          <p className="text-center text-gray-500 mt-6">
-            No listings found. Add a pet or product to get started!
-          </p>
+        {loading ? (
+         <Loading2/>
+        ) : (
+          listings.length === 0 && (
+            <p className="text-center text-gray-500 mt-6">
+              No listings found. Add a pet or product to get started!
+            </p>
+          )
         )}
+       
       </div>
     </section>
   );

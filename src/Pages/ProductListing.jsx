@@ -7,9 +7,10 @@ const ProductListing = () => {
   const { category } = useParams();
   const [filterData, setFilterData] = useState([]);
 
-
   useEffect(() => {
-    fetch(`http://localhost:3000/filter?filter=${category}`)
+    fetch(
+      `https://pawmart-assignment-10-server.vercel.app/filter?filter=${category}`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -21,7 +22,7 @@ const ProductListing = () => {
   }, [category]);
   return (
     <div className="container mx-auto">
-      <h1 className="text-5xl font-bold my-15 text-center blue-text ">
+      <h1 className="text-5xl font-bold my-15 text-center ">
         <span className="linear-text">{category}</span> ({filterData.length})
       </h1>
       <Link

@@ -4,9 +4,9 @@ import { Link, useParams } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
-const promise = fetch("http://localhost:3000/allListing").then((res) =>
-  res.json()
-);
+const promise = fetch(
+  "https://pawmart-assignment-10-server.vercel.app/allListing"
+).then((res) => res.json());
 
 const PetDetails = () => {
   const [category, setCategory] = useState("");
@@ -60,7 +60,7 @@ const PetDetails = () => {
       additionalNotes,
     };
 
-    fetch("http://localhost:3000/orderList", {
+    fetch("https://pawmart-assignment-10-server.vercel.app/orderList", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -87,8 +87,8 @@ const PetDetails = () => {
 
   return (
     <div>
-      <section className="py-12 bg-gray-50 p-5">
-        <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-2xl overflow-hidden md:flex items-center">
+      <section className="py-12  p-5">
+        <div className="max-w-5xl mx-auto  shadow-lg rounded-2xl overflow-hidden md:flex items-center">
           <div className="">
             <img
               src={pet.image}
@@ -98,17 +98,17 @@ const PetDetails = () => {
           </div>
 
           <div className="p-8 space-y-3">
-            <h2 className="text-3xl font-bold text-gray-800 ">{pet.name}</h2>
-            <p className="font-semibold text-gray-700 ">
+            <h2 className="text-3xl font-bold  ">{pet.name}</h2>
+            <p className="font-semibold  ">
               Category: <span className="linear-text">{pet.category}</span>
             </p>
 
-            <p className="text-gray-700">
+            <p className="">
               <span className="font-semibold">Description:</span>{" "}
               {pet.description}
             </p>
 
-            <div className="  gap-4 text-gray-700 space-y-3">
+            <div className="  gap-4  space-y-3">
               <p>
                 <span className="font-semibold">Owner’s Email:</span>{" "}
                 {pet.email}

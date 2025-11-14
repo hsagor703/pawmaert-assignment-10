@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Typewriter } from "react-simple-typewriter";
 
 const Login = () => {
   const { loginWithEmailPassword, signinWithGoogle } = use(AuthContext);
@@ -59,8 +60,17 @@ const Login = () => {
       <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
         <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
           {/* Title */}
-          <h1 className="text-3xl font-bold text-center linear-text mb-6">
-            Login Your Account
+          <h1 className="text-3xl font-bold text-center linear-text mb-6 App">
+            Login Your
+             <Typewriter
+              words= {[" Account"]}
+              loop={false}
+              cursor
+              cursorStyle="_"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            ></Typewriter>
           </h1>
 
           {/* Form */}

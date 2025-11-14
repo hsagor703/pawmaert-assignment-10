@@ -1,5 +1,4 @@
 import React, { use, useState } from "react";
-import { useLoaderData } from "react-router";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 
@@ -43,8 +42,7 @@ const AddListing = () => {
       date,
     };
 
-
-    fetch("http://localhost:3000/allListing", {
+    fetch("https://pawmart-assignment-10-server.vercel.app/allListing", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -154,7 +152,11 @@ const AddListing = () => {
             <input
               type="text"
               name="date"
-              defaultValue={new Date().toLocaleDateString().split("/").reverse().join("-")}
+              defaultValue={new Date()
+                .toLocaleDateString()
+                .split("/")
+                .reverse()
+                .join("-")}
               required
               placeholder="Date(Pick Up)"
               className="input w-full bg-[#045b9520]"

@@ -1,23 +1,30 @@
-import React, { use, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import PetCards from "../components/PetCards";
-import { AuthContext } from "../Provider/AuthProvider";
-import ErrorPage2 from "./ErrorPage2";
-import ErrorPage1 from "./ErrorPage1";
-import { Link, useNavigate } from "react-router";
-
-const promise = fetch("http://localhost:3000/allListing").then((res) =>
-  res.json()
-);
+import Aos from "aos";
+import "aos/dist/aos.css";
+const promise = fetch(
+  "https://pawmart-assignment-10-server.vercel.app/allListing"
+).then((res) => res.json());
 const PetSupplies = () => {
   const allListing = use(promise);
   const [search, setSearch] = useState(allListing);
-  const { loading } = use(AuthContext);
-  const navigate = useNavigate();
+
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      once: false,
+      offset: 120,
+      easing: "ease-in-out",
+      delay: 100,
+    });
+  }, []);
 
   const handleSearch = (e) => {
     e.preventDefault();
     const search = e.target.search.value;
-    fetch(`http://localhost:3000/search?search=${search}`)
+    fetch(
+      `https://pawmart-assignment-10-server.vercel.app/search?search=${search}`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -27,7 +34,9 @@ const PetSupplies = () => {
 
   const handleFilter = (e) => {
     const filter = e.target.value;
-    fetch(`http://localhost:3000/filter?filter=${filter}`)
+    fetch(
+      `https://pawmart-assignment-10-server.vercel.app/filter?filter=${filter}`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -37,7 +46,7 @@ const PetSupplies = () => {
 
   return (
     <div className="container mx-auto">
-      <h1 className="text-5xl font-bold my-15 text-center blue-text ">
+      <h1 className="text-5xl font-bold my-15 text-center  ">
         All <span className="linear-text">Products</span> ({search.length})
       </h1>
 
@@ -96,16 +105,17 @@ const PetSupplies = () => {
               moved.
             </p>
 
-            <button
-              className="mt-6 btn border border-[#053345] linear-text rounded-lg transition duration-200"
-            >
+            <button className="mt-6 btn border border-[#053345] linear-text rounded-lg transition duration-200">
               Re-Search again
             </button>
           </div>
         </>
       )}
 
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 px-5 md:px-0">
+      <div
+        data-aos="fade-up"
+        className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 px-5 md:px-0"
+      >
         {search.map((data) => (
           <PetCards key={data._id} data={data}></PetCards>
         ))}
