@@ -57,3 +57,38 @@ https://github.com/hsagor703/pawmaert-assignment-10-server
 | **tailwindcss**    | For styling and responsive design |
 
 ---
+
+## Backend 
+<ul>
+  <li>MongoDB</li>
+  <li>Express.js</li>
+  <li>Node.js</li>
+</ul>
+
+
+## 🔧 Setup Instructions (React + Firebase)
+
+**1️⃣ Clone the project**
+
+<ul>
+<li>(https://github.com/hsagor703/pawmaert-assignment-10)</li>
+<li>cd pawmaert-assignment-10</li>
+</ul>
+
+**2️⃣ Install dependencies**
+
+<ul>
+<li>npm install</li>
+</ul>
+
+**4️⃣ Firebase config**
+<ul>
+<li>Create a .env file in the project root:</li>
+  VITE_apiKey=AIzaSyB7eRvWdnLqh2urM_jAuBFHFlddSoBBpfA <br/>
+  VITE_authDomain=pawmart-assignment.firebaseapp.com <br/>
+  VITE_projectId=pawmart-assignment <br/>
+  VITE_storageBucket=pawmart-assignment.firebasestorage.app <br/>
+  VITE_messagingSenderId=984067907073 <br/>
+  VITE_appId=1:984067907073:web:6479da456770a5a78eaa00 <br/>
+</ul>
+
