@@ -66,29 +66,72 @@ https://github.com/hsagor703/pawmaert-assignment-10-server
 </ul>
 
 
-## 🔧 Setup Instructions (React + Firebase)
 
-**1️⃣ Clone the project**
 
-<ul>
-<li>(https://github.com/hsagor703/pawmaert-assignment-10)</li>
-<li>cd pawmaert-assignment-10</li>
-</ul>
+  ## Instructions to Run the Project Locally
 
-**2️⃣ Install dependencies**
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/hsagor703/pawmaert-assignment-10
+    ```
 
-<ul>
-<li>npm install</li>
-</ul>
+2. **Navigate to the project directory**:
+    ```bash
+    cd pawmaert-assignment-10
+    ```
 
-**4️⃣ Firebase config**
-<ul>
-<li>Create a .env file in the project root:</li>
-  VITE_apiKey=AIzaSyB7eRvWdnLqh2urM_jAuBFHFlddSoBBpfA <br/>
-  VITE_authDomain=pawmart-assignment.firebaseapp.com <br/>
-  VITE_projectId=pawmart-assignment <br/>
-  VITE_storageBucket=pawmart-assignment.firebasestorage.app <br/>
-  VITE_messagingSenderId=984067907073 <br/>
-  VITE_appId=1:984067907073:web:6479da456770a5a78eaa00 <br/>
-</ul>
+3. **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
+4. **Set up environment variables**:  
+    Create a `.env` file in the root directory and include the following variables:
+    ```
+   VITE_apiKey=AIzaSyB7eRvWdnLqh2urM_jAuBFHFlddSoBBpfA 
+   VITE_authDomain=pawmart-assignment.firebaseapp.com
+   VITE_projectId=pawmart-assignment
+   VITE_storageBucket=pawmart-assignment.firebasestorage.app
+   VITE_messagingSenderId=984067907073
+   VITE_appId=1:984067907073:web:6479da456770a5a78eaa00
+   
+    ```
+
+## dependencies List
+
+**dependencies**
+ ```
+     "dependencies": {
+    "@tailwindcss/vite": "^4.1.17",
+    "aos": "^2.3.4",
+    "firebase": "^12.5.0",
+    "jspdf": "^3.0.3",
+    "jspdf-autotable": "^5.0.2",
+    "motion": "^12.23.24",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0",
+    "react-router": "^7.9.5",
+    "react-simple-typewriter": "^5.0.1",
+    "react-slick": "^0.31.0",
+    "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.26.3",
+    "tailwindcss": "^4.1.17"
+  },
+```
+    
+1.  **devDependencies**:
+    ```
+    "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.4",
+    "daisyui": "^5.4.7",
+    "eslint": "^9.36.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.22",
+    "globals": "^16.4.0",
+    "vite": "^7.1.7"
+    } 
+   ```
