@@ -49,7 +49,7 @@ const PetHeroes = () => {
   //     });
   //   }, []);
   return (
-    <section className="py-12   mb-10">
+    <section className="py-12 mb-10">
       <div className="container mx-auto px-4 md:px-0 text-center">
         <h2 className="text-3xl font-bold  mb-2">
           🩺 Meet Our <span className="linear-text">Pet Heroes</span>

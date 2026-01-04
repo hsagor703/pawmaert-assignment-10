@@ -11,7 +11,9 @@ const MyOrders = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myOrders?email=${user.email}`)
+    fetch(
+      `https://pawmaert-assignment-10-server.vercel.app/myOrders?email=${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -81,7 +83,7 @@ const MyOrders = () => {
   };
 
   return (
-    <section className="py-12">
+    <section className="py-10">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold  mb-8 text-center">
           My <span className="linear-text">Orders</span>

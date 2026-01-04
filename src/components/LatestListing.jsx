@@ -4,9 +4,9 @@ import PetCards from "./PetCards";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-const fetchPromise = fetch("http://localhost:5000/latestList").then((res) =>
-  res.json()
-);
+const fetchPromise = fetch(
+  "https://pawmaert-assignment-10-server.vercel.app/latestList"
+).then((res) => res.json());
 const LatestListing = () => {
   const latestAllData = use(fetchPromise);
   useEffect(() => {

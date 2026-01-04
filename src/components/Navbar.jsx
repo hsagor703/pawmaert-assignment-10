@@ -14,6 +14,7 @@ import { CiCircleInfo, CiLogout } from "react-icons/ci";
 import { ImInfo } from "react-icons/im";
 import { PawPrint } from 'lucide-react';
 import { IoHomeOutline } from "react-icons/io5";
+import { RxDashboard } from "react-icons/rx";
 
 const Navbar = () => {
   const { logOut, user } = use(AuthContext);
@@ -67,7 +68,7 @@ const Navbar = () => {
 
       {user && (
         <>
-          <li>
+          {/* <li>
             <NavLink to="/add-listing">
               <MdFormatListBulletedAdd className="text-xl" /> Add Listing
             </NavLink>
@@ -81,6 +82,11 @@ const Navbar = () => {
           <li>
             <NavLink to="/my-orders">
               <RiListOrdered2 className="text-xl" /> My Orders
+            </NavLink>
+          </li> */}
+          <li>
+            <NavLink to="/dashboard">
+              <RxDashboard className="text-xl" /> Dashborad
             </NavLink>
           </li>
         </>
@@ -157,7 +163,7 @@ const Navbar = () => {
           </div>
 
           {user ? (
-            <button onClick={handleLogout} className="btn linear-btn border-0 ">
+            <button onClick={handleLogout} className="btn linear-btn  ">
               <CiLogout className="text-md" />
               Logout
             </button>

@@ -4,9 +4,9 @@ import { Link, useParams } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
-const promise = fetch("http://localhost:5000/allListing").then((res) =>
-  res.json()
-);
+const promise = fetch(
+  "https://pawmaert-assignment-10-server.vercel.app/allListing"
+).then((res) => res.json());
 
 const PetDetails = () => {
   const [category, setCategory] = useState("");
@@ -60,7 +60,7 @@ const PetDetails = () => {
       additionalNotes,
     };
 
-    fetch("http://localhost:5000/orderList", {
+    fetch("https://pawmaert-assignment-10-server.vercel.app/orderList", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -87,7 +87,7 @@ const PetDetails = () => {
 
   return (
     <div>
-      <section className="py-12  p-5">
+      <section className="pt-30 pb-15  p-5">
         <div className="max-w-5xl mx-auto  shadow-lg rounded-2xl overflow-hidden md:flex items-center">
           <div className="">
             <img

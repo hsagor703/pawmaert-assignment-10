@@ -10,7 +10,7 @@ const MyListing = () => {
   const [listings, setListings] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myListing?email=${user.email}`)
+    fetch(`https://pawmaert-assignment-10-server.vercel.app/myListing?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -32,7 +32,7 @@ const MyListing = () => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
-      fetch(`http://localhost:5000/allListing/${id}`, {
+      fetch(`https://pawmaert-assignment-10-server.vercel.app/allListing/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -74,7 +74,7 @@ const MyListing = () => {
       location,
     };
 
-    fetch(`http://localhost:5000/myListing/${id}`, {
+    fetch(`https://pawmaert-assignment-10-server.vercel.app/myListing/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -104,7 +104,7 @@ const MyListing = () => {
   };
 
   return (
-    <section className="py-12 ">
+    <section className=" py-10 ">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold mb-8 text-center">
           My <span className="linear-text">Listings</span>

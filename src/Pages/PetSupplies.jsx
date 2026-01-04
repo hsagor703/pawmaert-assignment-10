@@ -2,9 +2,9 @@ import React, { use, useEffect, useState } from "react";
 import PetCards from "../components/PetCards";
 import Aos from "aos";
 import "aos/dist/aos.css";
-const promise = fetch("http://localhost:5000/allListing").then((res) =>
-  res.json()
-);
+const promise = fetch(
+  "https://pawmaert-assignment-10-server.vercel.app/allListing"
+).then((res) => res.json());
 const PetSupplies = () => {
   const allListing = use(promise);
   const [search, setSearch] = useState(allListing);
@@ -22,7 +22,9 @@ const PetSupplies = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     const search = e.target.search.value;
-    fetch(`http://localhost:5000/search?search=${search}`)
+    fetch(
+      `https://pawmaert-assignment-10-server.vercel.app/search?search=${search}`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -32,7 +34,9 @@ const PetSupplies = () => {
 
   const handleFilter = (e) => {
     const filter = e.target.value;
-    fetch(`http://localhost:5000/filter?filter=${filter}`)
+    fetch(
+      `https://pawmaert-assignment-10-server.vercel.app/filter?filter=${filter}`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -41,7 +45,7 @@ const PetSupplies = () => {
   };
 
   return (
-    <div className="container mx-auto py-20">
+    <div className="container mx-auto pb-15 pt-30">
       <h1 className="text-3xl font-bold  text-center  ">
         All <span className="linear-text">Products</span> ({search.length})
       </h1>

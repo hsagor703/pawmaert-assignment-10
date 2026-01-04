@@ -3,7 +3,7 @@ import logo from "../assets/1762692019828-removebg-preview.png";
 
 export default function AboutPawMart() {
   return (
-    <section className="relative overflow-hidden py-20">
+    <section className="relative overflow-hidden pb-15 pt-30">
       {/* Gradient Background */}
       <div className="absolute inset-0 " />
 

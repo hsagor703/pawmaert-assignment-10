@@ -20,7 +20,7 @@ https://pawmart-assignment.web.app/
 
 ## 🌐 Live URL Server Side
 
-http://localhost:5000/
+https://pawmaert-assignment-10-server.vercel.app/
 
 ## 🚀 Github Repository Link client side
 

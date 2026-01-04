@@ -13,6 +13,8 @@ import ProductListing from "../Pages/ProductListing";
 import ErrorPage1 from "../Pages/ErrorPage1";
 import ErrorPage2 from "../Pages/ErrorPage2";
 import AboutPawMart from "../components/AboutPawMart";
+import DashboardLayout from "../Root/DashboardLayout";
+import Dashboard from "../dashboard/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -82,12 +84,58 @@ const router = createBrowserRouter([
     ],
   },
   {
+    path: "dashboard",
+    element: (
+      <PrivateRouter>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRouter>
+    ),
+    children: [
+      {
+        index: true,
+        Component: Dashboard,
+      },
+      {
+        path: "add",
+        element: (
+          <PrivateRouter>
+            <AddListing />
+         </PrivateRouter>
+        ),
+      },
+      {
+        path: "add-listing",
+        element: (
+          <PrivateRouter>
+            <AddListing />
+          </PrivateRouter>
+        ),
+      },
+      {
+        path: "my-listing",
+        element: (
+          <PrivateRouter>
+            <MyListing />
+          </PrivateRouter>
+        ),
+      },
+      {
+        path: "my-orders",
+        element: (
+          <PrivateRouter>
+            <MyOrders />
+          </PrivateRouter>
+        ),
+      },
+    ],
+  },
+  {
     path: "/*",
-    element:<ErrorPage2/>,
+    element: <ErrorPage2 />,
   },
   {
     path: "errorPage",
-    element:<ErrorPage1/>,
+    element: <ErrorPage1 />,
   },
 ]);
 

@@ -70,7 +70,7 @@ const Register = () => {
 
   return (
     <div>
-      <div className="min-h-screen flex items-center justify-center  px-4 py-10">
+      <div className="min-h-screen flex items-center justify-center   px-4 pb-15 pt-30">
         <div className="bg-blue-600/10 p-8 rounded-2xl shadow-lg w-full max-w-md">
           {/* Title */}
           <h1 className="text-3xl font-bold text-center linear-text mb-6">
@@ -90,7 +90,7 @@ const Register = () => {
           <form onSubmit={handleRegister} className="space-y-4">
             {/* Name */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-500 mb-1">
                 Full Name
               </label>
               <input
@@ -98,13 +98,13 @@ const Register = () => {
                 name="name"
                 placeholder="Enter your full name"
                 required
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full border border-gray-400 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
             </div>
 
             {/* Email */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-500 mb-1">
                 Email
               </label>
               <input
@@ -112,13 +112,13 @@ const Register = () => {
                 name="email"
                 required
                 placeholder="Enter your email"
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full border border-gray-400 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
             </div>
 
             {/* Photo URL */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-500 mb-1">
                 Photo URL
               </label>
               <input
@@ -126,13 +126,13 @@ const Register = () => {
                 name="photoURL"
                 required
                 placeholder="Enter your photo URL"
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full border border-gray-400 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
             </div>
 
             {/* Password */}
             <div className="relative">
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-500 mb-1">
                 Password
               </label>
               <input
@@ -140,7 +140,7 @@ const Register = () => {
                 name="password"
                 required
                 placeholder="Enter your password"
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full border border-gray-400 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
               <button
                 type="button"

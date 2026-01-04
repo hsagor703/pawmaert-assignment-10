@@ -42,7 +42,7 @@ const AddListing = () => {
       date,
     };
 
-    fetch("http://localhost:5000/allListing", {
+    fetch("https://pawmaert-assignment-10-server.vercel.app/allListing", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -67,7 +67,7 @@ const AddListing = () => {
   };
 
   return (
-    <div className="bg-[#045b9520] py-10">
+    <div className=" py-10">
       <div
         className="card bg-[#045b9510]
       shrink-0 shadow-2xl md:w-130 md:mx-auto  mx-5"
