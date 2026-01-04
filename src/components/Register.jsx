@@ -70,8 +70,8 @@ const Register = () => {
 
   return (
     <div>
-      <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 py-10">
-        <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
+      <div className="min-h-screen flex items-center justify-center  px-4 py-10">
+        <div className="bg-blue-600/10 p-8 rounded-2xl shadow-lg w-full max-w-md">
           {/* Title */}
           <h1 className="text-3xl font-bold text-center linear-text mb-6">
             Sign Up Your

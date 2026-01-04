@@ -31,6 +31,13 @@ const PetHeroes = () => {
       experience: "7+ Years Experience",
       img: "https://randomuser.me/api/portraits/men/60.jpg",
     },
+    {
+      id: 5,
+      name: "Dr. John Abrar",
+      specialty: "Health Animal Specialist",
+      experience: "5+ Years Experience",
+      img: "https://plus.unsplash.com/premium_photo-1658506671316-0b293df7c72b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZG9jdG9yfGVufDB8fDB8fHww",
+    },
   ];
   //   useEffect(() => {
   //     Aos.init({
@@ -42,8 +49,8 @@ const PetHeroes = () => {
   //     });
   //   }, []);
   return (
-    <section className="py-12 bg-base-200 mb-10">
-      <div className="max-w-6xl mx-auto px-4 text-center">
+    <section className="py-12   mb-10">
+      <div className="container mx-auto px-4 md:px-0 text-center">
         <h2 className="text-3xl font-bold  mb-2">
           🩺 Meet Our <span className="linear-text">Pet Heroes</span>
         </h2>
@@ -51,7 +58,7 @@ const PetHeroes = () => {
           Dedicated professionals ensuring the best care for your beloved pets.
         </p>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-3 grid-cols-2 lg:grid-cols-5">
           {vets.map((vet) => (
             <div
               data-aos="fade-up"

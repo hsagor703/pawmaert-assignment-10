@@ -2,9 +2,9 @@ import React, { use, useEffect, useState } from "react";
 import PetCards from "../components/PetCards";
 import Aos from "aos";
 import "aos/dist/aos.css";
-const promise = fetch(
-  "https://pawmart-assignment-10-server.vercel.app/allListing"
-).then((res) => res.json());
+const promise = fetch("http://localhost:5000/allListing").then((res) =>
+  res.json()
+);
 const PetSupplies = () => {
   const allListing = use(promise);
   const [search, setSearch] = useState(allListing);
@@ -22,9 +22,7 @@ const PetSupplies = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     const search = e.target.search.value;
-    fetch(
-      `https://pawmart-assignment-10-server.vercel.app/search?search=${search}`
-    )
+    fetch(`http://localhost:5000/search?search=${search}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -34,9 +32,7 @@ const PetSupplies = () => {
 
   const handleFilter = (e) => {
     const filter = e.target.value;
-    fetch(
-      `https://pawmart-assignment-10-server.vercel.app/filter?filter=${filter}`
-    )
+    fetch(`http://localhost:5000/filter?filter=${filter}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -45,8 +41,8 @@ const PetSupplies = () => {
   };
 
   return (
-    <div className="container mx-auto">
-      <h1 className="text-5xl font-bold my-15 text-center  ">
+    <div className="container mx-auto py-20">
+      <h1 className="text-3xl font-bold  text-center  ">
         All <span className="linear-text">Products</span> ({search.length})
       </h1>
 
@@ -114,7 +110,7 @@ const PetSupplies = () => {
 
       <div
         data-aos="fade-up"
-        className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 px-5 md:px-0"
+        className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-5 px-5 md:px-0"
       >
         {search.map((data) => (
           <PetCards key={data._id} data={data}></PetCards>

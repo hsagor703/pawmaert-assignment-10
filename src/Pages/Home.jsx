@@ -8,7 +8,7 @@ import Loading from "./Loading";
 
 const Home = () => {
   return (
-    <div>
+    <div >
       <Banner />
       <CategorySection />
       <LatestListing />

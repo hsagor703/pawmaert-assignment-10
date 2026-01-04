@@ -11,9 +11,7 @@ const MyOrders = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch(
-      `https://pawmart-assignment-10-server.vercel.app/myOrders?email=${user.email}`
-    )
+    fetch(`http://localhost:5000/myOrders?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -74,7 +72,7 @@ const MyOrders = () => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         Swal.fire("Saved!", "", "success");
-        // main  point 
+        // main  point
         pdf.save("Orders.pdf");
       } else if (result.isDenied) {
         Swal.fire("are not saved", "", "info");

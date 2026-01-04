@@ -12,6 +12,7 @@ import PetDetails from "../components/PetDetails";
 import ProductListing from "../Pages/ProductListing";
 import ErrorPage1 from "../Pages/ErrorPage1";
 import ErrorPage2 from "../Pages/ErrorPage2";
+import AboutPawMart from "../components/AboutPawMart";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "pet-supplies",
         Component: PetSupplies,
+      },
+      {
+        path: "about",
+        Component: AboutPawMart,
       },
       {
         path: "add-listing",

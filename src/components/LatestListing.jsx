@@ -4,9 +4,9 @@ import PetCards from "./PetCards";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-const fetchPromise = fetch(
-  "https://pawmart-assignment-10-server.vercel.app/latestList"
-).then((res) => res.json());
+const fetchPromise = fetch("http://localhost:5000/latestList").then((res) =>
+  res.json()
+);
 const LatestListing = () => {
   const latestAllData = use(fetchPromise);
   useEffect(() => {
@@ -20,13 +20,13 @@ const LatestListing = () => {
   }, []);
   return (
     <div className="container mx-auto">
-      <h1 className="text-5xl font-bold mb-15 text-center ">
+      <h1 className="text-3xl font-bold mb-15 text-center ">
         Latest <span className="linear-text">Products</span> (
         {latestAllData.length})
       </h1>
       <div
         data-aos="fade-up"
-        className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 px-5 md:px-0"
+        className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-5 px-5 md:px-0"
       >
         {latestAllData.map((data) => (
           <PetCards key={data._id} data={data}></PetCards>

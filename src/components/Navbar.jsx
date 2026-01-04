@@ -10,7 +10,10 @@ import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import avatar from "../assets/avatar.png";
 import { TbLogout2 } from "react-icons/tb";
-import { CiLogout } from "react-icons/ci";
+import { CiCircleInfo, CiLogout } from "react-icons/ci";
+import { ImInfo } from "react-icons/im";
+import { PawPrint } from 'lucide-react';
+import { IoHomeOutline } from "react-icons/io5";
 
 const Navbar = () => {
   const { logOut, user } = use(AuthContext);
@@ -48,12 +51,17 @@ const Navbar = () => {
     <>
       <li>
         <NavLink to="/">
-          <FaHome className="text-xl" /> Home
+          <IoHomeOutline className="text-xl " /> Home
         </NavLink>
       </li>
       <li>
         <NavLink to="/pet-supplies">
-          <MdPets className="text-xl" /> Pets &amp; Supplies
+          <PawPrint className="" /> Pets &amp; Supplies
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/about">
+          <ImInfo className="text-xl font-bold" /> About
         </NavLink>
       </li>
 
@@ -81,8 +89,8 @@ const Navbar = () => {
   );
 
   return (
-    <div className="bg-base-300 shadow-sm">
-      <div className="navbar container mx-auto  px-0">
+    <div className="bg-cyan-950 z-1 py-1 shadow-sm  fixed top-0 left-0 right-0 text-gray-100">
+      <div className="navbar container mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -110,14 +118,14 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <div className="md:flex items-center">
-            <img className="h-20" src={logo} alt="" />
+          <Link to={"/"} className="flex items-center">
+            <img className="h-10" src={logo} alt="" />
 
-            <a className="text-3xl font-bold">
+            <a className="text-2xl font-bold">
               Paw
               <span className="text-[#045B98]">Mart</span>
             </a>
-          </div>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
@@ -127,7 +135,7 @@ const Navbar = () => {
             onChange={(e) => handleTheme(e.target.checked)}
             type="checkbox"
             value="synthwave"
-            className="toggle theme-controller mr-5"
+            className="toggle theme-controller mr-5 border bg-gray-400"
           />
 
           <div
@@ -149,7 +157,7 @@ const Navbar = () => {
           </div>
 
           {user ? (
-            <button onClick={handleLogout} className="btn linear-btn">
+            <button onClick={handleLogout} className="btn linear-btn border-0 ">
               <CiLogout className="text-md" />
               Logout
             </button>

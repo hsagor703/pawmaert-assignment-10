@@ -8,9 +8,7 @@ const ProductListing = () => {
   const [filterData, setFilterData] = useState([]);
 
   useEffect(() => {
-    fetch(
-      `https://pawmart-assignment-10-server.vercel.app/filter?filter=${category}`
-    )
+    fetch(`http://localhost:5000/filter?filter=${category}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

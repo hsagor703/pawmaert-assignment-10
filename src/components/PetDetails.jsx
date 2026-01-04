@@ -4,9 +4,9 @@ import { Link, useParams } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
-const promise = fetch(
-  "https://pawmart-assignment-10-server.vercel.app/allListing"
-).then((res) => res.json());
+const promise = fetch("http://localhost:5000/allListing").then((res) =>
+  res.json()
+);
 
 const PetDetails = () => {
   const [category, setCategory] = useState("");
@@ -60,7 +60,7 @@ const PetDetails = () => {
       additionalNotes,
     };
 
-    fetch("https://pawmart-assignment-10-server.vercel.app/orderList", {
+    fetch("http://localhost:5000/orderList", {
       method: "POST",
       headers: {
         "content-type": "application/json",

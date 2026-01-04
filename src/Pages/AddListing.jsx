@@ -42,7 +42,7 @@ const AddListing = () => {
       date,
     };
 
-    fetch("https://pawmart-assignment-10-server.vercel.app/allListing", {
+    fetch("http://localhost:5000/allListing", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -10,9 +10,9 @@ const Footer = () => {
         <div className=" items-center">
           {/* <img className="h-10" src={logo} alt="logo" /> */}
           <div className="flex items-center">
-            <img className="h-20 " src={logo} alt="" />
+            <img className="h-10 " src={logo} alt="" />
 
-            <a className="text-3xl font-bold text-white">
+            <a className="text-2xl font-bold text-white">
               Paw
               <span className="text-[#126aa8]">Mart</span>
             </a>
