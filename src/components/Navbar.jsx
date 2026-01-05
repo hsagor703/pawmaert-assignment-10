@@ -15,6 +15,7 @@ import { ImInfo } from "react-icons/im";
 import { PawPrint } from 'lucide-react';
 import { IoHomeOutline } from "react-icons/io5";
 import { RxDashboard } from "react-icons/rx";
+import { CgProfile } from "react-icons/cg";
 
 const Navbar = () => {
   const { logOut, user } = use(AuthContext);
@@ -87,6 +88,11 @@ const Navbar = () => {
           <li>
             <NavLink to="/dashboard">
               <RxDashboard className="text-xl" /> Dashborad
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/dashboard/profile">
+              <CgProfile className="text-xl" /> Profile
             </NavLink>
           </li>
         </>

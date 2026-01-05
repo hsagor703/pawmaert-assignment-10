@@ -99,7 +99,7 @@ const MyOrders = () => {
           </button>
         </div>
 
-        <div className="overflow-x-auto shadow-md rounded-lg">
+        <div className="overflow-x-auto shadow-md rounded-lg border-2 border-[#001931]">
           <table className="min-w-full border border-gray-200 text-left">
             <thead className="bg-blue-100 text-gray-700">
               <tr>

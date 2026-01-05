@@ -15,6 +15,7 @@ import ErrorPage2 from "../Pages/ErrorPage2";
 import AboutPawMart from "../components/AboutPawMart";
 import DashboardLayout from "../Root/DashboardLayout";
 import Dashboard from "../dashboard/Dashboard";
+import ProfilePage from "../Pages/ProfilePage";
 
 const router = createBrowserRouter([
   {
@@ -124,6 +125,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRouter>
             <MyOrders />
+          </PrivateRouter>
+        ),
+      },
+      {
+        path: "profile",
+        element: (
+          <PrivateRouter>
+            <ProfilePage />
           </PrivateRouter>
         ),
       },

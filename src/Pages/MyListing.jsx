@@ -105,12 +105,12 @@ const MyListing = () => {
 
   return (
     <section className=" py-10 ">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-4 ">
         <h2 className="text-3xl font-bold mb-8 text-center">
           My <span className="linear-text">Listings</span>
         </h2>
 
-        <div className="overflow-x-auto  shadow-md rounded-lg">
+        <div className="overflow-x-auto  shadow-md rounded-lg border-2 border-[#001931]">
           <table className="min-w-full border border-gray-200 text-left">
             <thead className="bg-blue-100 text-gray-700">
               <tr>

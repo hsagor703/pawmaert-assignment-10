@@ -5,13 +5,14 @@ import { MdFormatListBulletedAdd } from "react-icons/md";
 import { PiUserListFill } from "react-icons/pi";
 import { RiListOrdered2 } from "react-icons/ri";
 import MyOrders from "../Pages/MyOrders";
+import { CgProfile } from "react-icons/cg";
 const DashboardLayout = () => {
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-4" type="checkbox" className="drawer-toggle " />
-      <div className="drawer-content">
+      <div className="drawer-content bg-blue-500/10 ">
         {/* Navbar */}
-        <nav className="navbar w-full bg-blue-300">
+        <nav className="navbar w-full  bg-blue-300">
           <label
             htmlFor="my-drawer-4"
             aria-label="open sidebar"
@@ -39,28 +40,29 @@ const DashboardLayout = () => {
 
               <a className="text-2xl font-bold">
                 Paw
-                <span className="text-[#045B98]">Mart</span> Dashboard
+                <span className=" text-[#045B98]">Mart</span> Dashboard
               </a>
             </Link>
           </div>
         </nav>
         {/* Page content here */}
         <Outlet></Outlet>
-        <div className="p-4 ">
+        <div className="p-4">
           {/* Page Content */}
         
         </div>
       </div>
 
-      <div className="drawer-side is-drawer-close:overflow-visible bg-gray-400">
+      <div className="drawer-side is-drawer-close:overflow-visible ">
         <label
           htmlFor="my-drawer-4"
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <div className="flex min-h-full flex-col items-start bg-base-200 is-drawer-close:w-14 is-drawer-open:w-64 ">
+        {/* bg-linear-to-r from-emerald-500 to bg-sky-500  */}
+        <div className="flex min-h-full flex-col items-start is-drawer-close:w-14 is-drawer-open:w-64 ">
           {/* Sidebar content here */}
-          <ul className="menu w-full grow bg-blue-600/20">
+          <ul className="menu w-full grow bg-none bg-[#181C22] text-gray-200">
             {/* List item */}
             <li>
               <Link
@@ -131,7 +133,7 @@ const DashboardLayout = () => {
                 className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
                 data-tip="My Listing"
               >
-                <PiUserListFill className="text-2xl" />
+                <PiUserListFill className="text-xl" />
                 <span className="is-drawer-close:hidden">My Listing</span>
               </NavLink>
             </li>
@@ -144,6 +146,16 @@ const DashboardLayout = () => {
               >
                 <RiListOrdered2 className="text-xl" />
                 <span className="is-drawer-close:hidden">My Order</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to={"/dashboard/profile"}
+                className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                data-tip="My Profile"
+              >
+                <CgProfile className="text-xl" />
+                <span className="is-drawer-close:hidden">My Profile</span>
               </NavLink>
             </li>
 

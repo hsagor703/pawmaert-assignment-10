@@ -70,7 +70,7 @@ const AddListing = () => {
     <div className=" py-10">
       <div
         className="card bg-[#045b9510]
-      shrink-0 shadow-2xl md:w-130 md:mx-auto  mx-5"
+      shrink-0 shadow-2xl md:w-130 md:mx-auto border border-gray-500/10 mx-5"
       >
         <form onSubmit={handleAdd} className="card-body ">
           <h1 className="text-2xl font-bold text-center linear-text">
