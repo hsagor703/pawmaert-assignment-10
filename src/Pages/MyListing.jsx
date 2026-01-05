@@ -10,7 +10,7 @@ const MyListing = () => {
   const [listings, setListings] = useState([]);
 
   useEffect(() => {
-    fetch(`https://pawmaert-assignment-10-server.vercel.app/myListing?email=${user.email}`)
+    fetch(`https://pawmaert-assignment-10-server.vercel.app/myListing?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

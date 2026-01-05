@@ -12,7 +12,7 @@ const MyOrders = () => {
 
   useEffect(() => {
     fetch(
-      `https://pawmaert-assignment-10-server.vercel.app/myOrders?email=${user.email}`
+      `https://pawmaert-assignment-10-server.vercel.app/myOrders?email=${user?.email}`
     )
       .then((res) => res.json())
       .then((data) => {
