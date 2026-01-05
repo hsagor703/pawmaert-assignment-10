@@ -5,10 +5,11 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 const fetchPromise = fetch(
-  "https://pawmaert-assignment-10-server.vercel.app/latestList"
+  "https://pawmart-assignment-10-server.vercel.app/latestList"
 ).then((res) => res.json());
 const LatestListing = () => {
   const latestAllData = use(fetchPromise);
+  console.log(latestAllData);
   useEffect(() => {
     Aos.init({
       duration: 1000,

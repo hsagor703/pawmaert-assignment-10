@@ -9,7 +9,7 @@ const ProductListing = () => {
 
   useEffect(() => {
     fetch(
-      `https://pawmaert-assignment-10-server.vercel.app/filter?filter=${category}`
+      `https://pawmart-assignment-10-server.vercel.app/filter?filter=${category}`
     )
       .then((res) => res.json())
       .then((data) => {

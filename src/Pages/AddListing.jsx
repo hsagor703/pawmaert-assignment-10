@@ -42,7 +42,7 @@ const AddListing = () => {
       date,
     };
 
-    fetch("https://pawmaert-assignment-10-server.vercel.app/allListing", {
+    fetch("https://pawmart-assignment-10-server.vercel.app/allListing", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -158,6 +158,7 @@ const AddListing = () => {
                 .reverse()
                 .join("-")}
               required
+              readOnly
               placeholder="Date(Pick Up)"
               className="input w-full bg-[#045b9520]"
             ></input>

@@ -5,7 +5,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const promise = fetch(
-  "https://pawmaert-assignment-10-server.vercel.app/allListing"
+  "https://pawmart-assignment-10-server.vercel.app/allListing"
 ).then((res) => res.json());
 
 const PetDetails = () => {
@@ -60,7 +60,7 @@ const PetDetails = () => {
       additionalNotes,
     };
 
-    fetch("https://pawmaert-assignment-10-server.vercel.app/orderList", {
+    fetch("https://pawmart-assignment-10-server.vercel.app/orderList", {
       method: "POST",
       headers: {
         "content-type": "application/json",

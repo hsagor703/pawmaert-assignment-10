@@ -10,7 +10,9 @@ const MyListing = () => {
   const [listings, setListings] = useState([]);
 
   useEffect(() => {
-    fetch(`https://pawmaert-assignment-10-server.vercel.app/myListing?email=${user?.email}`)
+    fetch(
+      `https://pawmart-assignment-10-server.vercel.app/myListing?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -32,9 +34,12 @@ const MyListing = () => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
-      fetch(`https://pawmaert-assignment-10-server.vercel.app/allListing/${id}`, {
-        method: "DELETE",
-      })
+      fetch(
+        `https://pawmart-assignment-10-server.vercel.app/allListing/${id}`,
+        {
+          method: "DELETE",
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log("success fully deleted", data);
@@ -74,7 +79,7 @@ const MyListing = () => {
       location,
     };
 
-    fetch(`https://pawmaert-assignment-10-server.vercel.app/myListing/${id}`, {
+    fetch(`https://pawmart-assignment-10-server.vercel.app/myListing/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

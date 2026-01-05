@@ -3,7 +3,7 @@ import PetCards from "../components/PetCards";
 import Aos from "aos";
 import "aos/dist/aos.css";
 const promise = fetch(
-  "https://pawmaert-assignment-10-server.vercel.app/allListing"
+  "https://pawmart-assignment-10-server.vercel.app/allListing"
 ).then((res) => res.json());
 const PetSupplies = () => {
   const allListing = use(promise);
@@ -23,7 +23,7 @@ const PetSupplies = () => {
     e.preventDefault();
     const search = e.target.search.value;
     fetch(
-      `https://pawmaert-assignment-10-server.vercel.app/search?search=${search}`
+      `https://pawmart-assignment-10-server.vercel.app/search?search=${search}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -35,7 +35,7 @@ const PetSupplies = () => {
   const handleFilter = (e) => {
     const filter = e.target.value;
     fetch(
-      `https://pawmaert-assignment-10-server.vercel.app/filter?filter=${filter}`
+      `https://pawmart-assignment-10-server.vercel.app/filter?filter=${filter}`
     )
       .then((res) => res.json())
       .then((data) => {
