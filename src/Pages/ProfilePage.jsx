@@ -155,7 +155,7 @@ export default function ProfilePage() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+        {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
           {[
             { label: "Pets Adopted", value: 3 },
             { label: "Listings", value: 5 },
@@ -172,7 +172,7 @@ export default function ProfilePage() {
               <p className="text-gray-600 text-sm mt-1">{stat.label}</p>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Account Details */}
         <div className="bg-white rounded-2xl shadow mt-10 p-6">

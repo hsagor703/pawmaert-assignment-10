@@ -16,11 +16,14 @@ import AboutPawMart from "../components/AboutPawMart";
 import DashboardLayout from "../Root/DashboardLayout";
 import Dashboard from "../dashboard/Dashboard";
 import ProfilePage from "../Pages/ProfilePage";
+import Loading2 from "../Pages/Loading2";
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
+    errorElement:<ErrorPage1/>,
+    hydrateFallbackElement:<Loading2></Loading2>,
     children: [
       {
         index: true,
