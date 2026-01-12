@@ -105,7 +105,7 @@ export default function ProfilePage() {
 
       <div className="max-w-5xl mx-auto px-6 py-12">
         {/* Profile Card */}
-        <div className="bg-white rounded-3xl shadow overflow-hidden">
+        <div className="bg-base-100 rounded-3xl shadow overflow-hidden">
           {/* Cover */}
           <div className="h-40 bg-linear-to-r from-emerald-500 to-sky-500"></div>
 
@@ -130,7 +130,7 @@ export default function ProfilePage() {
 
             {/* User Info */}
             <div className="mt-4">
-              <h2 className="text-2xl font-bold text-gray-900">
+              <h2 className="text-2xl font-bold text-gray-400">
                 {user?.displayName}
               </h2>
               <p className="text-sm text-emerald-600">
@@ -175,7 +175,7 @@ export default function ProfilePage() {
         </div> */}
 
         {/* Account Details */}
-        <div className="bg-white rounded-2xl shadow mt-10 p-6">
+        <div className="bg-base-100 rounded-2xl shadow mt-10 p-6">
           <h3 className="text-xl font-semibold mb-4">Account Details</h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
